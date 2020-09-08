@@ -1,0 +1,94 @@
+{
+    "ACTION_TERMS": {
+        "CAPTURE": "capturar",
+        "CLOSE": "fechar",
+        "EXIT": "sair",
+        "RESET": "reinicializar"
+    },
+    "GENERAL_PARAGRAPHS": {
+        "NOTICE": "Gire seu dispositivo para visualizar opções adicionais.",
+        "DISCLAIMER_PARAGRAPH": "Não deve ser usado para diagnósticos.",
+        "SCREEN_TOO_SMALL": "Tela pequena demais para que o visualizador funcione corretamente.",
+        "INCOMPATIBLE_BROWSER": "Navegador não suportado.  O comportamento pode ficar inconsistente e o visualizador não pode ser usado para visualizar as imagens corretamente."
+    },
+    "MEDICAL_TERMS": {
+        "ENTRIES": "entradas",
+        "ENTRY": "entrada",
+        "PATIENT": "paciente",
+        "PATIENTS": "pacientes",
+        "SERIES": "séries",
+        "REPORT": "laudo",
+        "REPORTS": "laudos",
+        "STUDY": "estudo",
+        "STUDIES": "estudos"
+    },
+    "COMPONENTS": {
+        "ASIDE_DISPLAY_MODE": {
+            "GRID_DISPLAY": "exibição em grid",
+            "LIST_DISPLAY": "exibição em lista",
+            "ONE_COL_DISPLAY": "exibição em coluna"
+        },
+        "OVERLAY": {
+            "IMAGE_LOADING_PARAGRAPH": "imagem {{ loadingImage }} sendo carregada, imagem {{ loadedImage }} exibida"
+        },
+        "SERIES_LIST": {
+            "NO_REPORT_AVAILABLE_PARAGRAPH": "Laudo não disponível",
+            "NOTICE_PARAGRAPH": "Selecione um ou vários itens da série clicando neles.",
+            "PDF_REPORT": "PDF",
+            "SELECTION_MODE": "modo de seleção",
+            "UNTITLED_VIDEO": "vídeo sem título",
+            "UNTITLED_SERIES": "series sem título",
+            "VIDEO_LABEL_PARAGRAPH": "Video: {{videoDescription || 'Untitled video'}}"
+        },
+        "SPLIT_PANE": {
+            "EMPTY_PANE_OVERLAY_PARAGRAPH": "arraste uma série aqui"
+        },
+        "SPLIT_PANE_OVERLAY": {
+            "WW_WC": "ww/wc",
+            "ZOOM": "zoom"
+        },
+        "STUDY": {
+            "DOWNLOAD_STUDY": "download do estudo",
+            "UNTITLED_STUDY": "estudo sem nome",
+            "LOADING_STUDY": "carregando estudo ..."
+        },
+        "TIMELINE": {
+            "FPS": "fps",
+            "FRAME_RATE": "velocidade do frame",
+            "NEXT": "próximo",
+            "OF": "de",
+            "PAUSED": "pausar",
+            "PREVIOUS": "anterior",
+            "PLAY": "play",
+            "PLAY_REVERSE": "play reverso"
+        },
+        "TOOLBOX": {
+            "ANGLE_MEASUREMENT": "ângulo entre retas",
+            "SIMPLE_ANGLE_MEASUREMENT": "ângulo",
+            "ARROW_ANNOTATE_TEXT": "adicionar texto",
+            "ELLIPTICAL_ROI": "elíptico Roi",
+            "FLIP_HORIZONTALLY": "inverter horizontalmente",
+            "FLIP_VERTICALLY": "inverter verticalmente",
+            "INVERT_COLOR": "inverter cor",
+            "KEY_IMAGE_NOTE_LEGEND": "Criar uma Imagem chave na janela selecionada.",
+            "LENGTH_MEASUREMENT": "medida",
+            "PANNING": "mover imagem",
+            "PIXEL_PROBE": "pixel probe",
+            "PREVIOUS_SERIES": "serie anterior",
+            "MAGNIFYING_GLASS_CONFIG_LEGEND": "Clique no botão para ativar a lupa. Os parâmetros da lupa podem ser configurados neste painel.",
+            "MAGNIFYING_GLASS_LEVEL": "aumentar grau da lupa",
+            "MAGNIFYING_GLASS_SIZE": "aumentar tamanho da lupa",
+            "NEXT_SERIES": "próxima serie",
+            "RECTANGLE_ROI": "retangular Roi",
+            "ROTATE_LEFT": "girar para a esquerda",
+            "ROTATE_RIGHT": "girar para a direita",
+            "SPLIT_PANE_CONFIG_LEGEND_PARAGRAPH": "layout da tela.",
+            "SYNCHRONIZED_BROWSING" : "sincronizar cortes de mesmo plano",
+            "TOGGLE_LAYOUT_TEXT" : "Alternar texto de layout",
+            "TOGGLE_LAYOUT_ICONS" : "Alternar ícones de layout",
+            "COMBINED_TOOL": "Combinar ferramenta",
+            "WINDOWING_PRESET_LEGEND": "Clique no botão para alterar o Brilho e Contraste da janela ou aplique uma predefinição com os filtros abaixo:",
+            "ZOOM": "zoom"
+        }
+    }
+}

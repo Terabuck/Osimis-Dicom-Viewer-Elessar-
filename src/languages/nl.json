@@ -1,0 +1,94 @@
+{
+    "ACTION_TERMS": {
+        "CAPTURE": "vastleggen",
+        "CLOSE": "sluiten",
+        "EXIT": "afsluiten",
+        "RESET": "herstellen"
+    },
+    "GENERAL_PARAGRAPHS": {
+        "NOTICE": "Draai je apparaat om extra opties te bekijken.",
+        "DISCLAIMER_PARAGRAPH": "Niet voor diagnostisch gebruik.",
+        "SCREEN_TOO_SMALL": "Uw scherm is te klein om de kijker correct te laten werken.",
+        "INCOMPATIBLE_BROWSER": "Uw Browser wordt niet Ondersteund. U mag inconsistent gedrag verwachten en u mag de kijker niet gebruiken om een ​​diagnose te stellen.",
+        "INCOMPATIBLE_PRINT_BROWSER": "Uw browser heeft geen correcte afdrukondersteuning. Je zou inconsistent gedrag kunnen verwachten."
+     },
+    "MEDICAL_TERMS": {
+        "ENTRIES": "studies",
+        "ENTRY": "studie",
+        "PATIENT": "dier",
+        "PATIENTS": "dieren",
+        "SERIES": "series",
+        "REPORT": "rapport",
+        "REPORTS": "rapporten",
+        "STUDY": "studie",
+        "STUDIES": "studies"
+    },
+    "COMPONENTS": {
+        "ASIDE_DISPLAY_MODE": {
+            "GRID_DISPLAY": "rasterweergave",
+            "LIST_DISPLAY": "lijstweergave",
+            "ONE_COL_DISPLAY": "kolomweergave"
+        },
+        "OVERLAY": {
+            "IMAGE_LOADING_PARAGRAPH": "beeld {{ loadingImage }} aan het laden, beeld {{ loadedImage }} wordt weergegeven"
+        },
+        "SERIES_LIST": {
+            "NO_REPORT_AVAILABLE_PARAGRAPH": "Geen rapport beschikbaar",
+            "NOTICE_PARAGRAPH": "Selecteer een of meerdere series door ze aan te klikken.",
+            "PDF_REPORT": "PDF-rapport",
+            "SELECTION_MODE": "Selectiemodus",
+            "UNTITLED_VIDEO": "Naamloze video",
+            "UNTITLED_SERIES": "Naamloze serie",
+            "VIDEO_LABEL_PARAGRAPH": "Video: {{videoDescription || 'Naamloze video'}}"
+        },
+        "SPLIT_PANE": {
+            "EMPTY_PANE_OVERLAY_PARAGRAPH": "Sleep beelden naar hier"
+        },
+        "SPLIT_PANE_OVERLAY": {
+            "WW_WC": "ww/wc",
+            "ZOOM": "zoom"
+        },
+        "STUDY": {
+            "DOWNLOAD_STUDY": "Studie downloaden",
+            "UNTITLED_STUDY": "Naamloze studie",
+            "LOADING_STUDY": "Bezig met laden studie..."
+        },
+        "TIMELINE": {
+            "FPS": "fps",
+            "FRAME_RATE": "beeldsnelheid",
+            "NEXT": "volgende",
+            "OF": "van",
+            "PAUSED": "gepauzeerd",
+            "PREVIOUS": "vorige",
+            "PLAY": "afspelen"
+        },
+        "TOOLBOX": {
+            "ANGLE_MEASUREMENT": "hoekmeting",
+            "ARROW_ANNOTATE_TEXT": "aantekeningen toevoegen",
+            "ELLIPTICAL_ROI": "elliptische ROI",
+            "FLIP_HORIZONTALLY": "horizontaal spiegelen",
+            "FLIP_VERTICALLY": "verticaal spiegelen",
+            "INVERT_COLOR": "negatief",
+            "KEY_IMAGE_NOTE_LEGEND": "Maak een beeldnotitie op de geselecteerde viewport.",
+            "LENGTH_MEASUREMENT": "afstandsmeting",
+            "PANNING": "verplaatsen",
+            "PIXEL_PROBE": "pixel probe",
+            "PREVIOUS_SERIES": "vorig beeld",
+            "PRINT": "afdrukken",
+            "MAGNIFYING_GLASS_CONFIG_LEGEND": "Klik op de knop om het vergrootglas in of uit te schakelen. Je kan hier de parameters wijzigen.",
+            "MAGNIFYING_GLASS_LEVEL": "vergrotingsfactor",
+            "MAGNIFYING_GLASS_SIZE": "grootte van vergrootglas",
+            "NEXT_SERIES": "volgend beeld",
+            "RECTANGLE_ROI": "rechthoekige ROI",
+            "ROTATE_LEFT": "linksom draaien",
+            "ROTATE_RIGHT": "rechtsom draaien",
+            "SPLIT_PANE_CONFIG_LEGEND_PARAGRAPH": "Verander de viewport-layout.",
+            "SYNCHRONIZED_BROWSING" : "Gesynchroniseerd bladeren",
+            "TOGGLE_LAYOUT_TEXT" : "Annotaties in/uitschakelen",
+            "TOGGLE_LAYOUT_ICONS" : "Orientatie-icoon in/uitschakelen",
+            "COMBINED_TOOL": "Aanraakgebaar",
+            "WINDOWING_PRESET_LEGEND": "Klik op de knop om de windowing-tool in of uit te schakelen of een voorinstelling toe te passen op de geselecteerde viewport.",
+            "ZOOM": "zoom"
+        }
+    }
+}

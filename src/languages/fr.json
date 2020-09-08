@@ -1,0 +1,97 @@
+{
+    "ACTION_TERMS": {
+        "CAPTURE": "enregistrer",
+        "CLOSE": "fermer",
+        "EXIT": "quitter",
+        "RESET": "réinitialiser"
+    },
+    "GENERAL_PARAGRAPHS": {
+        "NOTICE": "Faites pivoter votre appareil pour afficher des options supplémentaires.",
+        "DISCLAIMER_PARAGRAPH": "Ne pas utiliser pour un diagnostique.",
+        "SCREEN_TOO_SMALL": "Votre écran est trop petit pour utiliser le viewer.",
+        "INCOMPATIBLE_BROWSER": "Votre navigateur n'est pas supporté.  Le comportement du viewer sera altéré. Utilisez un autre navigateur si vous voulez émettre un diagnostique.",
+        "INCOMPATIBLE_PRINT_BROWSER": "Votre navigateur ne supporte pas toutes les fonctionalités d’impression. utilisez un autre navigateur si vous souhaitez effectuer une impression."
+    },
+    "MEDICAL_TERMS": {
+        "ENTRIES": "entrées",
+        "ENTRY": "entrée",
+        "PATIENT": "patient",
+        "PATIENTS": "patients",
+        "SERIES": "séries",
+        "REPORT": "rapport",
+        "REPORTS": "reports",
+        "STUDY": "étude",
+        "STUDIES": "études"
+    },
+    "COMPONENTS": {
+        "ASIDE_DISPLAY_MODE": {
+            "GRID_DISPLAY": "affichage en grille",
+            "LIST_DISPLAY": "affichage en liste",
+            "ONE_COL_DISPLAY": "affichage en colonne"
+        },
+        "OVERLAY": {
+            "IMAGE_LOADING_PARAGRAPH": "image {{ loadingImage }} en chargement, image {{ loadedImage }} affichée"
+        },
+        "SERIES_LIST": {
+            "NO_REPORT_AVAILABLE_PARAGRAPH": "Pas de rapport disponible",
+            "NOTICE_PARAGRAPH": "Choisissez une ou plusieurs séries en cliquant dessus.",
+            "PDF_REPORT": "rapport PDF",
+            "SELECTION_MODE": "mode sélection",
+            "UNTITLED_VIDEO": "vidéo sans titre",
+            "UNTITLED_SERIES": "série sans titre",
+            "VIDEO_LABEL_PARAGRAPH": "Vidéo: {{videoDescription || 'Vidéo sans titre'}}"
+        },
+        "SPLIT_PANE": {
+            "EMPTY_PANE_OVERLAY_PARAGRAPH": "déposez une série ici"
+        },
+        "SPLIT_PANE_OVERLAY": {
+            "WW_WC": "ww/wc",
+            "ZOOM": "zoom"
+        },
+        "STUDY": {
+            "DOWNLOAD_STUDY": "Télécharger l’étude",
+            "UNTITLED_STUDY": "étude sans titre",
+            "LOADING_STUDY": "chargement en cours ..."
+        },
+        "TIMELINE": {
+            "FPS": "ips",
+            "FRAME_RATE": "fréquence d’image",
+            "NEXT": "prochain",
+            "OF": "sur",
+            "PAUSED": "pause",
+            "PREVIOUS": "précédent",
+            "PLAY": "lancer"
+        },
+        "TOOLBOX": {
+            "SIMPLE_ANGLE_MEASUREMENT": "mesure d’angle entre lignes",
+            "ANGLE_MEASUREMENT": "mesure d’angle",
+            "ARROW_ANNOTATE_TEXT": "annoter l’image avec du texte",
+            "DOWNLOAD_AS_JPEG": "télécharger en jpeg",
+            "ELLIPTICAL_ROI": "roi élliptique",
+            "FLIP_HORIZONTALLY": "retournement horizontal",
+            "FLIP_VERTICALLY": "retournement vertical",
+            "INVERT_COLOR": "inverser les couleurs",
+            "KEY_IMAGE_NOTE_LEGEND": "Créer une image avec les annotations pour le viewport sélectionné.",
+            "LENGTH_MEASUREMENT": "mesure de taille",
+            "PANNING": "déplacer",
+            "PIXEL_PROBE": "pixel probe",
+            "PREVIOUS_SERIES": "série précédente",
+            "PRINT": "imprimer",
+            "MAGNIFYING_GLASS_CONFIG_LEGEND": "cliquer sur le bouton pour utiliser la loupe. Vous pouvez configurez les paramètres.",
+            "MAGNIFYING_GLASS_LEVEL": "niveau de grossissement",
+            "MAGNIFYING_GLASS_SIZE": "taille du grossissement",
+            "NEXT_SERIES": "série suivante",
+            "RECTANGLE_ROI": "roi rectangulaire",
+            "ROTATE_LEFT": "rotation sur la gauche",
+            "ROTATE_RIGHT": "rotation sur la droite",
+            "SPLIT_PANE_CONFIG_LEGEND_PARAGRAPH": "Changer la mise en page des viewports.",
+            "SYNCHRONIZED_BROWSING" : "Navigation syncrhonisée",
+            "TOGGLE_LAYOUT_TEXT" : "Annotations textuelles",
+            "TOGGLE_LAYOUT_ICONS" : "Annotations visuelles",
+            "COMBINED_TOOL": "outil multiple",
+            "WINDOWING_PRESET_LEGEND": "cliquer sur le bouton pour utiliser l’outil de windowing ou appliquer un preset pour le viewport sélectionné.",
+            "ZOOM": "zoom"
+        }
+    }
+}
+

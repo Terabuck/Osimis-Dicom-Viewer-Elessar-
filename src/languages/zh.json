@@ -1,0 +1,99 @@
+{
+  "ACTION_TERMS": {
+      "CAPTURE": "截图",
+      "CLOSE": "关闭",
+      "EXIT": "退出",
+      "RESET": "重置"
+  },
+  "GENERAL_PARAGRAPHS": {
+      "NOTICE": "旋转设备以查看其他选项!",
+      "DISCLAIMER_PARAGRAPH": "仅供非诊断场景使用！",
+      "SCREEN_TOO_SMALL": "您的屏幕太小了，无法正常调阅影像！",
+      "INCOMPATIBLE_BROWSER": "您的浏览器不兼容，可能得不到预期的结果，请不要将该阅读器用于诊断！",
+      "INCOMPATIBLE_PRINT_BROWSER": "您的浏览器不能很好的支持打印功能，可能得不到预期的结果！"
+  },
+  "MEDICAL_TERMS": {
+      "ENTRIES": "入口",
+      "ENTRY": "入口",
+      "PATIENT": "病患",
+      "PATIENTS": "病患",
+      "SERIES": "序列",
+      "REPORT": "报告",
+      "REPORTS": "报告",
+      "STUDY": "检查",
+      "STUDIES": "检查"
+  },
+  "COMPONENTS": {
+      "ASIDE_DISPLAY_MODE": {
+          "GRID_DISPLAY": "网格显示",
+          "LIST_DISPLAY": "列表显示",
+          "ONE_COL_DISPLAY": "单列显示"
+      },
+      "OVERLAY": {
+          "IMAGE_LOADING_PARAGRAPH": "图像 {{ loadingImage }} 加载中，图像 {{ loadedImage }} 已显示"
+      },
+      "SERIES_LIST": {
+          "NO_REPORT_AVAILABLE_PARAGRAPH": "暂无可用报告",
+          "NOTICE_PARAGRAPH": "点选一个或多个序列",
+          "PDF_REPORT": "PDF 报告",
+          "SELECTION_MODE": "选择模式",
+          "UNTITLED_VIDEO": "未命名视频",
+          "UNTITLED_SERIES": "未命名序列",
+          "VIDEO_LABEL_PARAGRAPH": "视频：{{videoDescription || '未命名视频'}}"
+      },
+      "SPLIT_PANE": {
+          "EMPTY_PANE_OVERLAY_PARAGRAPH": "拖拽序列到这里"
+      },
+      "SPLIT_PANE_OVERLAY": {
+          "WW_WC": "窗宽/窗位",
+          "ZOOM": "缩放比例"
+      },
+      "STUDY": {
+          "DOWNLOAD_STUDY": "下载检查",
+          "UNTITLED_STUDY": "未命名检查",
+          "LOADING_STUDY": "检查加载中..."
+      },
+      "TIMELINE": {
+          "FPS": "fps",
+          "FRAME_RATE": "播放速度",
+          "NEXT": "下一张",
+          "OF": "/",
+          "PAUSED": "暂停",
+          "PREVIOUS": "上一张",
+          "PLAY": "播放",
+          "PLAY_REVERSE": "倒序播放"
+      },
+      "TOOLBOX": {
+          "ANGLE_MEASUREMENT": "线角测量",
+          "SIMPLE_ANGLE_MEASUREMENT": "角度测量",
+          "ARROW_ANNOTATE_TEXT": "用文本注释图像",
+          "CROSS_HAIR" : "3D 瞄准线",
+          "DOWNLOAD_AS_JPEG": "下载 jpeg 图像",
+          "ELLIPTICAL_ROI": "椭圆形 ROI",
+          "FLIP_HORIZONTALLY": "水平翻转",
+          "FLIP_VERTICALLY": "垂直翻转",
+          "INVERT_COLOR": "反色",
+          "KEY_IMAGE_NOTE_LEGEND": "在当前视区创建关键图片注释。",
+          "LENGTH_MEASUREMENT": "长度测量",
+          "PANNING": "平移",
+          "PIXEL_PROBE": "像素探针",
+          "PREVIOUS_SERIES": "上一序列",
+          "PRINT": "打印",
+          "MAGNIFYING_GLASS_CONFIG_LEGEND": "单击按钮切换放大镜工具，您可以在此面板中配置其参数。",
+          "MAGNIFYING_GLASS_LEVEL": "放大倍数",
+          "MAGNIFYING_GLASS_SIZE": "放大区域大小",
+          "NEXT_SERIES": "下个序列",
+          "RECTANGLE_ROI": "矩形 ROI",
+          "REFERENCE_LINES" : "参考线",
+          "ROTATE_LEFT": "逆时针",
+          "ROTATE_RIGHT": "顺时针",
+          "SPLIT_PANE_CONFIG_LEGEND_PARAGRAPH": "更改视区布局",
+          "SYNCHRONIZED_BROWSING" : "同步浏览",
+          "TOGGLE_LAYOUT_TEXT" : "显示/隐藏文字",
+          "TOGGLE_LAYOUT_ICONS" : "显示/隐藏图标",
+          "COMBINED_TOOL": "组合工具",
+          "WINDOWING_PRESET_LEGEND": "单击按钮切换窗口工具或选择预设应用到选定视区。",
+          "ZOOM": "缩放"
+      }
+  }
+}

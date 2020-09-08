@@ -1,0 +1,95 @@
+{
+    "ACTION_TERMS": {
+        "CAPTURE": "capturar",
+        "CLOSE": "cerrar",
+        "EXIT": "salir",
+        "RESET": "reiniciar"
+    },
+    "GENERAL_PARAGRAPHS": {
+        "NOTICE": "Gire su dispositivo para ver opciones adicionales.",
+        "DISCLAIMER_PARAGRAPH": "No debe ser usado para diagnosticar.",
+        "SCREEN_TOO_SMALL": "Ventana de dimensiones insuficientes para que el visualizador funcione correctamente.",
+        "INCOMPATIBLE_BROWSER": "Navegador no compatible.  Puede generar inconsistencias y el visualizador no puede ser usado correctamente.",
+        "INCOMPATIBLE_PRINT_BROWSER": "Navegador no compatible.  No soporta todas las funcionalidades de formato impreso. Utilice otro navegador si desea obtener una imagen adecuadamente impresa."
+    },
+    "MEDICAL_TERMS": {
+        "ENTRIES": "elementos",
+        "ENTRY": "elemento",
+        "PATIENT": "paciente",
+        "PATIENTS": "pacientes",
+        "SERIES": "serie",
+        "REPORT": "Informe",
+        "REPORTS": "Informes",
+        "STUDY": "estudio",
+        "STUDIES": "estudios"
+    },
+    "COMPONENTS": {
+        "ASIDE_DISPLAY_MODE": {
+            "GRID_DISPLAY": "mostrar en cuadros",
+            "LIST_DISPLAY": "mostrar como lista",
+            "ONE_COL_DISPLAY": "mostrar en columna"
+        },
+        "OVERLAY": {
+            "IMAGE_LOADING_PARAGRAPH": "imagen {{ loadingImage }} siendo generada, imagen {{ loadedImage }} mostrada"
+        },
+        "SERIES_LIST": {
+            "NO_REPORT_AVAILABLE_PARAGRAPH": "Informe no disponible",
+            "NOTICE_PARAGRAPH":"Seleccione una o varias series haciendo click en ellas",
+            "PDF_REPORT": "PDF",
+            "SELECTION_MODE": "modo seleccionar",
+            "UNTITLED_VIDEO": "video sin nombre",
+            "UNTITLED_SERIES": "serie sin nombre",
+            "VIDEO_LABEL_PARAGRAPH": "Video: {{videoDescription || 'video sin nombre'}}"
+        },
+        "SPLIT_PANE": {
+            "EMPTY_PANE_OVERLAY_PARAGRAPH": "arrastre y coloque una serie en este espacio"
+        },
+        "SPLIT_PANE_OVERLAY": {
+            "WW_WC": "av/nv",
+            "ZOOM": "zoom"
+        },
+        "STUDY": {
+            "DOWNLOAD_STUDY": "descargar estudio",
+            "UNTITLED_STUDY": "estudio sin nombre",
+            "LOADING_STUDY": "cargando estudio ..."
+        },
+        "TIMELINE": {
+            "FPS": "fps",
+            "FRAME_RATE": "frecuencia de cuadros",
+            "NEXT": "siguiente",
+            "OF": "de",
+            "PAUSED": "pausar",
+            "PREVIOUS": "anterior",
+            "PLAY": "reprodiucir video",
+            "PLAY_REVERSE": "video en reversa"
+        },
+        "TOOLBOX": {
+            "ANGLE_MEASUREMENT": "Angulo",
+            "SIMPLE_ANGLE_MEASUREMENT": "Angulo simple",
+            "ARROW_ANNOTATE_TEXT": "Agregar comentario",
+            "ELLIPTICAL_ROI": "ROI elipse",
+            "FLIP_HORIZONTALLY": "Invertir horizontalmente",
+            "FLIP_VERTICALLY": "Invertir verticalmente",
+            "INVERT_COLOR": "Imagen en negativo",
+            "KEY_IMAGE_NOTE_LEGEND": "Generar una nueva imagen clave a partir de la ventana seleccionada",
+            "LENGTH_MEASUREMENT": "Medir",
+            "PANNING": "Desplazar imagen",
+            "PIXEL_PROBE": "Seleccionar pixel",
+            "PREVIOUS_SERIES": "Serie previa",
+            "MAGNIFYING_GLASS_CONFIG_LEGEND": "Activar lupa (puede configurarse en este panel)",
+            "MAGNIFYING_GLASS_LEVEL": "Poder de la lupa",
+            "MAGNIFYING_GLASS_SIZE": "Dimensiones de la lupa",
+            "NEXT_SERIES": "Siguiente serie",
+            "RECTANGLE_ROI": "RDI rectangular",
+            "ROTATE_LEFT": "Girar a la izquierda",
+            "ROTATE_RIGHT": "Girar a la derecha",
+            "SPLIT_PANE_CONFIG_LEGEND_PARAGRAPH": "Organizar la ventana",
+            "SYNCHRONIZED_BROWSING": "Sincronizar cortes",
+            "TOGGLE_LAYOUT_TEXT": "Alternar comentarios",
+            "TOGGLE_LAYOUT_ICONS": "Alternar Iconos",
+            "COMBINED_TOOL": "Herramienta combinada",
+            "WINDOWING_PRESET_LEGEND": "Haga click para modificar el brillo y el contraste de la ventana o aplique una predefinida de la lista",
+            "ZOOM": "zoom"
+        }
+    }
+}
