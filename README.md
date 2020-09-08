@@ -16,6 +16,9 @@ Files must be includded in a zip file (1.3.1.zip) in the backend/ThirdPArtyDownl
 
 Examples (Anonymized)
 Chest xRay (COVID-19): https://misimagenes.online/ym166
+
 Face CT: https://misimagenes.online/g9b6v
+
 Lumbar Spine MRI: https://misimagenes.online/j8hqh 
+
 Digital Mammography and Doppler US: https://misimagenes.online/6d4ac 
