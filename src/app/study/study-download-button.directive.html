@@ -1,0 +1,15 @@
+<a
+    class="wvButton"
+    target="_self"
+    ng-href="{{vm.downloadLink}}"
+    ng-click="vm.clicked($event)"
+    ng-if="!!vm.studyId"
+
+    bs-tooltip
+    bs-enabled="!vm.window.USER_IS_TOUCHING"
+    container="body"
+    data-title="{{ 'COMPONENTS.STUDY.DOWNLOAD_STUDY' | translate | wvCapitalize }}"
+    placement="right"
+>
+    <!-- download --> <span class="fa fa-arrow-alt-circle-down"></span>
+</a>

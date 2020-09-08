@@ -1,0 +1,58 @@
+<aside
+    class="wvLayout__right"
+    ng-show="vm.enabled"
+    ng-class="{
+        'wvLayout__right--toppadding': vm.isTopPaddingEnabled,
+        'wvLayout__right--bottompadding': vm.isBottomPaddingEnabled,
+        'wvLayout__right--closed': vm.closed
+    }"
+>
+    <!-- Buttons -->
+    <div
+        ng-if="vm.handlesEnabled"
+        ng-class="{
+            'wvAsideRight__actions': !vm.closed,
+            'wvAsideRight__actions--outside': vm.closed
+        }"
+    >
+
+        <!-- State 1: opened -->
+        <ul
+            ng-show="!vm.closed"
+            class="list-unstyled fs16"
+        > 
+            <!-- Button: close -->
+            <button
+                bs-enabled="!vm.window.USER_IS_TOUCHING"
+                bs-tooltip data-placement="left" data-title="Close"
+                ng-click="vm.closed = true;"
+                class="wvAsideRight__action button__base wh__20 lh__20 va-m text-center"
+            >
+                <i class="fa fa-angle-double-right"></i>
+            </button>
+        </ul>
+
+        <!-- State 2: closed -->
+        <ul
+            ng-show="vm.closed"
+            class="list-unstyled fs16"
+        >
+            <!-- Button: open -->
+            <button
+                bs-enabled="!vm.window.USER_IS_TOUCHING"
+                bs-tooltip data-placement="left" data-title="Open"
+                ng-click="vm.closed = false;"
+                class="wvAsideRight__action button__base wh__20 lh__20 va-m text-center"
+            >
+                <i class="fa fa-angle-double-left"></i>
+            </button>
+        </ul>
+
+    </div>
+
+    <!-- Main Content -->
+    <div class="wvAsideRight__content scrollable">
+        <ng-transclude></ng-transclude>
+    </div>
+
+</aside>

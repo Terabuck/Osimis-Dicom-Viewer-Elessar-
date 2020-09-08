@@ -1,0 +1,76 @@
+<aside
+    class="wvLayoutLeft"
+    ng-show="vm.enabled"
+    ng-class="{
+        'wvLayoutLeft--toppadding': vm.isTopPaddingEnabled,
+        'wvLayoutLeft--bottompadding': vm.isBottomPaddingEnabled,
+        'wvLayoutLeft--closed': vm.closed,
+        'wvLayoutLeft--small': vm.isSmall
+    }"
+>
+    <!-- Actions -->
+    <div
+        ng-if="vm.handlesEnabled"
+        ng-class="{
+            'wvLayoutLeft__actions': !vm.closed,
+            'wvLayoutLeft__actions--outside': vm.closed
+        }"
+    >
+        <!-- State 1: opened -->
+        <ul
+            ng-show="!vm.closed"
+            class="list-unstyled fs16"
+        >
+            <!-- Action: close -->
+            <button
+                bs-enabled="!vm.window.USER_IS_TOUCHING"
+                bs-tooltip data-placement="right" data-title="Close"
+                ng-click="vm.closed = true;"
+                class="wvLayoutLeft__action button__base wh__20 lh__20 va-m text-center"
+            >
+                <i class="fa fa-angle-double-left"></i>
+            </button>
+
+        </ul>
+
+        <!-- State 2: closed -->
+        <ul
+            ng-show="vm.closed"
+            class="list-unstyled fs16"
+        >
+            <!-- Action: open -->
+            <button
+                bs-enabled="!vm.window.USER_IS_TOUCHING"
+                bs-tooltip data-placement="right" data-title="Open"
+                ng-click="vm.closed = false;"
+                class="wvLayoutLeft__action button__base wh__20 lh__20 va-m text-center"
+            >
+                <i class="fa fa-angle-double-right"></i>
+            </button>
+
+        </ul>
+
+    </div>
+
+    <!-- Main [injectable] content -->
+    <div class="wvLayoutLeft__content">
+        <!-- Top Zone -->
+        <div
+            class="wvLayoutLeft__contentTop"
+            ng-transclude="1"
+        ></div>
+
+        <!-- Middle Zone -->
+        <div
+            class="wvLayoutLeft__contentMiddle"
+            ng-transclude="2"
+        ></div>
+
+        <!-- Bottom Zone -->
+        <div
+            class="wvLayoutLeft__contentBottom"
+            ng-transclude="3"
+        ></div>
+    </div>
+
+</aside>

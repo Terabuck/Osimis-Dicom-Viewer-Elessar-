@@ -1,0 +1,28 @@
+function BinaryCommand(type, imageId, quality, reason) {
+	this.imageId = imageId;
+	this.quality = quality;
+
+	/** type: 'load' | 'preload' | 'abortLoad' | 'abortPreload'
+	 *
+	 * distinct preloading from loading to prioritize the command
+	 *
+	 */
+	this.type = type;
+
+	/** reason: undefined | 'selected-study-changed' | 'selected-series-changed' | ...
+	 *
+	 * used only by preload & abortPreload
+	 *
+	 * can be used to prioritize the command
+	 *
+	 */
+	this.reason = reason || undefined;
+
+	 /** timestamp: timestamp
+	  *
+	  * used to prioritize the command
+	  * used to flush old cache
+	  *
+	  */
+	this.timestamp = Date.now();
+}

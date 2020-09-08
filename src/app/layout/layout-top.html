@@ -1,0 +1,18 @@
+<div
+    ng-show="vm.enabled"
+    class="wvViewer__topBar pln clearfix"
+>
+    <!-- 
+    @warning we must use ng-show in place of ng-if!
+    This is important because we include transcluded content that is not
+    recompiled when we use ng-if.
+    -->
+    <div class="wvViewer__buttonGroup--asideWidth float__left">
+        <div style="margin-left: 1rem" class="wvViewer__buttonGroup lh__40 fs18" ng-transclude="1"></div>
+        <div class="wvViewer__buttonGroup float__right" ng-transclude="2"></div>
+    </div>
+    <div class="wvViewer__buttonGroup--contentWidth" style="display: flex; flex: 1; flex-direction: row;">
+        <div ng-transclude="3" style="flex: 1 0 auto;"></div>
+        <div class="pr10" ng-transclude="4"></div>
+    </div>
+</div>

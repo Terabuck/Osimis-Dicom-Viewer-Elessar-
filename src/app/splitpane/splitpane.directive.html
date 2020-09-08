@@ -1,0 +1,29 @@
+<div class="wvSplitpane">
+
+    <div 
+        ng-repeat="(id, $pane) in vm.paneManager.panes track by $id($pane)"
+        class="wvSplitpane__cellBorder--{{ $pane.studyColor }}"
+        ng-class="{
+            'wvSplitpane__cellBorder': !vm.paneManager.isPaneSelected($pane.x, $pane.y) || vm.paneManager.getPane($pane.x, $pane.y).isEmpty(),
+            'wvSplitpane__cellBorder--selected': vm.paneManager.isPaneSelected($pane.x, $pane.y) && !vm.paneManager.getPane($pane.x, $pane.y).isEmpty()
+        }"
+        ng-style="{
+            'position': 'absolute',
+            'width': 'calc('+vm.rowWidth+' - 2px)',
+            'height': 'calc('+vm.rowHeight+' - 2px)',
+            'left': 'calc('+$pane.x+' * '+vm.rowWidth+' + 0px)',
+            'top': 'calc('+$pane.y+' * '+vm.rowHeight+' + 4px)'
+        }"
+        data-pane-hashkey="{{ $pane.$$hashKey }}"
+        ng-click="!vm.readonly && vm.paneManager.selectPane($pane.x, $pane.y)"
+        ng-mouseenter="!vm.readonly && (vm.paneManager.getPane($pane.x, $pane.y).isHovered = true)"
+        ng-mouseleave="!vm.readonly && (vm.paneManager.getPane($pane.x, $pane.y).isHovered = false)"
+    >
+        <!-- Content -->
+        <ng-transclude
+            class="wvSplitpane__cell"
+            ng-transclude-slot="panePolicy"
+        ></ng-transclude>
+    </div>
+
+</div>

@@ -1,0 +1,1 @@
+// TBD, disable uncompatible image formats on IE10 + Safari + Mobile

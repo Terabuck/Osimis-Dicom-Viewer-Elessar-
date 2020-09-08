@@ -1,0 +1,50 @@
+<div
+    class="wvSelectionActionlist"
+>
+    <!-- State 1: selection disabled -->
+    <div
+        ng-show="!vm.selectionEnabled"
+    >
+        <button
+            class="wvButton--border"
+            ng-click="vm.selectionEnabled = !vm.selectionEnabled"
+        >
+            {{ "COMPONENTS.SERIES_LIST.SELECTION_MODE" | translate }}
+        </button>
+    </div>
+
+    <!-- State 2: selection enabled -->
+    <div
+        ng-show="vm.selectionEnabled"
+    >
+        <!-- Notice -->
+        <p>
+            {{ "COMPONENTS.SERIES_LIST.NOTICE_PARAGRAPH" | translate }}
+        </p>
+
+        <!-- Injectable Content Zone -->
+        <div
+            ng-transclude
+        >
+        </div>
+
+        <!-- Close / Reset Buttons -->
+        <div
+            class="wvSelectionActionlist__bottom"
+        >
+            <button
+                class="wvButton--border"
+                ng-show="vm.selectionEnabled"
+                ng-click="vm.selectionEnabled = !vm.selectionEnabled"
+            >
+                {{ "ACTION_TERMS.CLOSE" | translate | wvCapitalize }}
+            <button
+                class="wvButton--border"
+                ng-show="vm.selectionEnabled"
+                ng-click="vm.data = []"
+            >
+                {{ "ACTION_TERMS.RESET" | translate | wvCapitalize }}
+            </button>
+        </div>
+    </div>
+</div>

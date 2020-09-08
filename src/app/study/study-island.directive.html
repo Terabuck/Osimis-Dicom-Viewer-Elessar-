@@ -1,0 +1,32 @@
+<div class="wvStudyIsland--{{vm.study.color}}" ng-if="vm.studyId">
+    <div class="wvStudyIsland__header--{{vm.study.color}}">
+        <!-- Actions -->
+        <div class="wvStudyIsland__actions" ng-class="{'wvStudyIsland__actions--oneCol': vm.displayMode === 'oneCol'}">
+            <wv-study-download-button
+                ng-if="vm.studyDownloadEnabled"
+                wv-study-id="vm.studyId"
+            ></wv-study-download-button>
+        </div>
+
+        <!-- Title -->
+        <span>{{vm.study.tags.StudyDescription || (vm.isLoading && ('COMPONENTS.STUDY.LOADING_STUDY' | translate | wvCapitalize)) || ('COMPONENTS.STUDY.UNTITLED_STUDY' | translate | wvCapitalize)}}</span>
+        <br/>
+        <small ng-if="vm.study.tags.StudyDate">{{vm.study.tags.StudyDate}}</small>
+    </div>
+
+    <!-- List of series -->
+    <div
+        class="wvStudyIsland__main"
+    >
+        <wv-serieslist
+            wv-study-id="vm.studyId"
+            wv-display-mode="vm.displayMode"
+            wv-video-display-enabled="vm.videoDisplayEnabled"
+            wv-selection-enabled="vm.itemSelectionEnabled"
+            wv-selected-series-ids="vm.selectedSeriesIds"
+            wv-selected-video-ids="vm.selectedVideoIds"
+            wv-selected-report-ids="vm.selectedReportIds"
+            wv-show-no-report-icon="vm.showNoReportIcon"
+        ></wv-serieslist>
+    </div>
+</div>

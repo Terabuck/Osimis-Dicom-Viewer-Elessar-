@@ -1,0 +1,27 @@
+<div class="wv-overlay" ng-transclude>
+    <span class="wvOverlay__studyBadge--{{vm.study.color}}"></span>
+
+    <div class="wv-overlay-topleft" ng-show="vm.showTopLeftText() || vm.showTopLeftIcon()">
+        <div ng-show="vm.showTopLeftText()" ng-repeat="line in vm.topLeftLines track by $index">{{line}}<br/></div>
+        <img ng-show="vm.showTopLeftIcon() && vm.topLeftIcon" ng-src="{{vm.topLeftIcon}}" class="wv-overlay-icon" />
+    </div>
+    <div class="wv-overlay-topright" ng-show="vm.showTopRightText() || vm.showTopRightIcon()">
+        <div ng-show="vm.showTopRightText()" ng-repeat="line in vm.topRightLines track by $index">{{line}}<br/></div>
+        <img ng-show="vm.showTopRightIcon() && vm.topRightIcon" ng-src="{{vm.topRightIcon}}" class="block float__right wv-overlay-icon"/>
+    </div>
+
+    <div class="wv-overlay-bottomleft" ng-show="vm.showBottomLeftText() || vm.showBottomLeftIcon()">
+        <img ng-show="vm.showBottomLeftIcon() && vm.bottomLeftIcon" ng-src="{{vm.bottomLeftIcon}}" class="wv-overlay-icon"/>
+        <div ng-show="vm.showBottomLeftText()" ng-repeat="line in vm.bottomLeftLines track by $index">{{line}}<br/></div>
+    </div>
+
+    <div class="wv-overlay-bottomright" ng-show="vm.showBottomRightText() || vm.showBottomRightIcon()">
+        <img ng-show="vm.showBottomRightIcon() && vm.bottomRightIcon" ng-src="{{vm.bottomRightIcon}}" class="block float__right clearfix wv-overlay-icon"/>
+        <div class="clear" ng-show="vm.showBottomRightText() && vm.showOverlay">
+            <div ng-repeat="line in vm.bottomRightLines track by $index">{{line}}<br/></div>
+            <span ng-show="vm.wvSeries.currentShownIndex != vm.wvSeries.currentIndex">({{ "COMPONENTS.OVERLAY.IMAGE_LOADING_PARAGRAPH" | translate:{'loadingImage': vm.wvSeries.currentIndex+1, 'loadedImage': vm.wvSeries.currentShownIndex+1} }})</br></span>
+            {{ "COMPONENTS.SPLIT_PANE_OVERLAY.ZOOM" | translate | wvCapitalize }}: {{vm.wvViewport.getScaleForFullResolution()|number:2}}x<br/>
+            {{ "COMPONENTS.SPLIT_PANE_OVERLAY.WW_WC" | translate }}: {{vm.wvViewport.voi.windowWidth|number:0}}/{{vm.wvViewport.voi.windowCenter|number:0}}
+        </div>
+    </div>
+</div>

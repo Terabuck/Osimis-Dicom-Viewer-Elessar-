@@ -1,0 +1,28 @@
+<div class="wvStudyInformationBreadcrumb" ng-if="vm.studyId">
+    <div class="wvStudyInformationBreadcrumb__patient">
+        <span
+            class="wvStudyInformationBreadcrumb__patientName"
+        >
+            {{vm.patientTags.PatientName || 'Untitled patient'}}
+        </span>
+        <small
+            class="wvStudyInformationBreadcrumb__patientBirthDate"
+            ng-if="vm.patientTags.PatientBirthDate"
+        >
+            ({{vm.patientTags.PatientBirthDate}})
+        </small>
+    </div>
+    <div class="wvStudyInformationBreadcrumb__study">
+        <span
+            class="wvStudyInformationBreadcrumb__studyDescription"
+        >
+            {{vm.studyTags.StudyDescription || 'Untitled study'}}
+        </span>
+        <small
+            class="wvStudyInformationBreadcrumb__studyDate"
+            ng-if="vm.studyTags.StudyDate"
+        >
+            ({{vm.studyTags.StudyDate}})
+        </small>
+    </div>
+</div>

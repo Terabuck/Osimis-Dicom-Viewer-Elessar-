@@ -1,0 +1,9 @@
+<form>
+    <label>
+        <textarea type="text" class="form-control" ng-model="$note" required></textarea>
+    </label>
+    <br/>
+    <button type="submit" class="wvButton--borderAndWhite" ng-click="$note && vm.captureViewportAsKeyImage($note)">
+        {{ "ACTION_TERMS.CAPTURE" | translate | wvCapitalize }}
+    </button>
+</form>
