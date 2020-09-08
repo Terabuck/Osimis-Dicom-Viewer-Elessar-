@@ -1,0 +1,102 @@
+<div class="tbGroup">
+    <div class="tbGroup__toggl">
+        <button
+            ng-disabled="vm.readonly"
+            class="wvButton--underline fa"
+            ng-click="vm.isOpen = !vm.isOpen"
+            ng-class="{
+                'wvLargeButton': vm.buttonSize == 'large',
+            }"
+        >
+            <span class="fa" ng-class="{'fa-th': vm.splitpaneLayout.x === 1 && vm.splitpaneLayout.y === 1, 'fa-square': vm.splitpaneLayout.x !== 1 || vm.splitpaneLayout.y !== 1}"></span>
+            <span class="wvButton__bottomTriangle" ng-class="{'toggled': vm.isOpen}"></span>
+        </button>
+    </div>
+    <div ng-show="vm.isOpen" ng-class="{'tbGroup__buttons--bottom': vm.popoverPlacement === 'bottom', 'tbGroup__buttons--left': vm.popoverPlacement === 'left'}">
+        <!--
+        1x1 icon.
+        -->
+        <div ng-class="{'inline-object': vm.popoverPlacement === 'bottom'}">
+            <label
+                class="wvButton"
+                ng-class="{wvLargeButton: vm.buttonSize === 'large'}"
+                ng-click="vm.isOpen = false"
+            >
+                <input
+                    class="wvToolbar__splitpaneConfigButtonInput"
+                    type="radio"
+
+                    ng-disabled="vm.readonly"
+                    ng-model="vm.splitpaneLayout"
+                    ng-value="{x: 1, y: 1}"
+                />
+                <i class="fa fa-square"></i>
+            </label>
+        </div>
+
+        <!--
+        2x1 icon.
+        -->
+        <div ng-class="{'inline-object': vm.popoverPlacement === 'bottom'}">
+            <label
+                class="wvButton"
+                ng-class="{wvLargeButton: vm.buttonSize === 'large'}"
+                ng-click="vm.isOpen = false"
+            >
+                <input
+                    class="wvToolbar__splitpaneConfigButtonInput"
+                    type="radio"
+
+                    ng-disabled="vm.readonly"
+                    ng-model="vm.splitpaneLayout"
+                    ng-value="{x: 2, y: 1}"
+                />
+                <i class="fa fa-pause"></i>
+            </label>
+        </div>
+
+        <!--
+        1x2 icon.
+        -->
+        <div ng-class="{'inline-object': vm.popoverPlacement === 'bottom'}">
+            <label
+                class="wvButton"
+                ng-class="{wvLargeButton: vm.buttonSize === 'large'}"
+                ng-click="vm.isOpen = false"
+                
+            >
+                <input
+                    class="wvToolbar__splitpaneConfigButtonInput"
+                    type="radio"
+
+                    ng-disabled="vm.readonly"
+                    ng-model="vm.splitpaneLayout"
+                    ng-value="{x: 1, y: 2}"
+                />
+                <i class="fa fa-rotate-90 fa-pause"></i>
+            </label>
+        </div>
+
+        <!--
+        2x2 icon.
+        -->
+        <div ng-class="{'inline-object': vm.popoverPlacement === 'bottom'}">
+            <label
+                class="wvButton"
+                ng-class="{wvLargeButton: vm.buttonSize === 'large'}"
+                ng-click="vm.isOpen = false"
+            >
+                <input
+                    class="wvToolbar__splitpaneConfigButtonInput"
+                    type="radio"
+
+                    ng-disabled="vm.readonly"
+                    ng-model="vm.splitpaneLayout"
+                    ng-value="{x: 2, y: 2}"
+                />
+                <i class="fa fa-th-large"></i>
+            </label>
+        </div>
+    </div>
+    <div class="overlay__transparent" ng-if="vm.isOpen" ng-click="vm.isOpen = false"></div>
+</div>

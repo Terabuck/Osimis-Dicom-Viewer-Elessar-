@@ -1,0 +1,21 @@
+<div class="popover wvToolbar__splitpaneConfigPopover">
+    <div class="arrow"></div>
+    <div class="popover-content">
+        <form name="popoverForm">
+            <!--
+            Notice
+            -->
+            <p class="wvToolbar__splitpaneConfigNotice">
+                {{ "COMPONENTS.TOOLBOX.KEY_IMAGE_NOTE_LEGEND" | translate }}
+            </p>
+
+            <div style="text-align: center;">
+                <wv-export-viewport-button
+                    wv-image-id="imageId"
+                    wv-viewport="viewport"
+                    wv-on-export-ended="onExportEnded()"
+                ></wv-export-viewport-button>
+            </div>
+          </form>
+    </div>
+</div>

@@ -1,0 +1,83 @@
+<div class="popover wvToolbar__splitpaneConfigPopover" ng-show="content">
+    <div class="arrow"></div>
+    <div class="popover-content">
+        <form name="popoverForm">
+            <!--
+            Notice
+            -->
+            <p class="wvToolbar__splitpaneConfigNotice">
+                {{ "COMPONENTS.TOOLBOX.SPLIT_PANE_CONFIG_LEGEND_PARAGRAPH" | translate }}
+            </p>
+
+            <div style="text-align: center;">
+                <!--
+                1x1 icon.
+                -->
+                <label
+                    class="wvToolbar__splitpaneConfigButton fa fa-times"
+                    ng-class="{wvLargeButton: vm.buttonSize === 'large'}"
+                >
+                    <input
+                        class="wvToolbar__splitpaneConfigButtonInput"
+                        type="radio"
+
+                        ng-disabled="vm.readonly"
+                        ng-model="vm.splitpaneLayout"
+                        ng-value="{x: 1, y: 1}"
+                    />
+                </label>
+
+                <!--
+                2x1 icon.
+                -->
+                <label
+                    class="wvToolbar__splitpaneConfigButton fa fa-pause"
+                    ng-class="{wvLargeButton: vm.buttonSize === 'large'}"
+                >
+                    <input
+                        class="wvToolbar__splitpaneConfigButtonInput"
+                        type="radio"
+
+                        ng-disabled="vm.readonly"
+                        ng-model="vm.splitpaneLayout"
+                        ng-value="{x: 2, y: 1}"
+                    />
+                </label>
+
+                <!--
+                1x2 icon.
+                -->
+                <label
+                    class="wvToolbar__splitpaneConfigButton--rotate fa fa-pause"
+                    ng-class="{wvLargeButton: vm.buttonSize === 'large'}"
+                >
+                    <input
+                        class="wvToolbar__splitpaneConfigButtonInput"
+                        type="radio"
+
+                        ng-disabled="vm.readonly"
+                        ng-model="vm.splitpaneLayout"
+                        ng-value="{x: 1, y: 2}"
+                    />
+                </label>
+
+                <!--
+                2x2 icon.
+                -->
+                <label
+                    class="wvToolbar__splitpaneConfigButton glyphicon glyphicon-th-large"
+                    ng-class="{wvLargeButton: vm.buttonSize === 'large'}"
+                >
+                    <input
+                        class="wvToolbar__splitpaneConfigButtonInput"
+                        type="radio"
+
+                        ng-disabled="vm.readonly"
+                        ng-model="vm.splitpaneLayout"
+                        ng-value="{x: 2, y: 2}"
+                    />
+                </label>
+              </div>
+          </form>
+    </div>
+</div>

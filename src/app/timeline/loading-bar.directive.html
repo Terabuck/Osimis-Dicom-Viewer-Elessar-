@@ -1,0 +1,38 @@
+<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+    <g id="image-loading-bar-{{$id}}">
+        <rect ng-attr-width="{{vm.imageBarWidth}}%" height="100%"/>
+    </g>
+    </defs>
+
+    <!-- Image Bars -->
+    <use
+        ng-repeat="i in [0, vm.imageCount] | range track by $index"
+        ng-click="!vm.readonly && vm.goToImage(i)"
+
+        xlink:href=""
+        ng-attr-xlink:href="{{'#image-loading-bar-'+$parent.$id}}"
+        ng-attr-x="{{vm.imageBarWidth*i}}%" 
+        ng-class="[
+            'wv-loadingbar-image-bar',
+            'wv-loadingbar-' + (vm.QualityKeys[vm.bestQualityByImage[i]] ? vm.QualityKeys[vm.bestQualityByImage[i]]+'-quality' : 'not-loaded')
+        ]"
+        y="5px"
+    />
+
+    <!-- Current Image Bar -->
+    <use
+        ng-if="vm.imageBarWidth"
+        ng-click="!vm.readonly && vm.goToImage(vm.currentImageIndex)"
+
+        xlink:href=""
+        ng-attr-xlink:href="{{'#image-loading-bar-'+$parent.$id}}"
+        ng-attr-x="{{vm.imageBarWidth*vm.currentImageIndex}}%" 
+        ng-class="[
+            'wv-loadingbar-image-bar',
+            'wv-loadingbar-' + (vm.QualityKeys[vm.bestQualityByImage[vm.currentImageIndex]] ? vm.QualityKeys[vm.bestQualityByImage[vm.currentImageIndex]]+'-quality' : 'not-loaded'),
+            'wv-loadingbar-active'
+        ]"
+        y="5px"
+    />
+ </svg>

@@ -1,0 +1,63 @@
+<div class="popover wvToolbar__windowingPresetConfigPopover" ng-show="content">
+    <div class="arrow"></div>
+    <div class="popover-content">
+        <form name="popoverForm">
+            <!--
+            Notice
+            -->
+            <p class="wvToolbar__windowingPresetConfigNotice">
+                {{ "COMPONENTS.TOOLBOX.WINDOWING_PRESET_LEGEND" | translate }}
+            </p>
+
+            <ul class="wvToolbar__windowingPresetList">
+                <!--
+                Windowing presets (as set in dicom tag) of the
+                currently selected viewport.
+                -->
+                <li class="wvToolbar__windowingPresetListItem"
+                    ng-repeat="voi in embeddedWindowings "
+                    ng-click="applyWindowing(voi.windowWidth, voi.windowCenter)"
+                >
+                    Preset <small>#{{$index+1}} (L {{voi.windowCenter | number:0}}, W {{voi.windowWidth | number:0}})</small>
+                </li>
+
+                <!--
+                Windowing presets as set in the orthanc config file (or the
+                default ones).
+                -->
+                <li class="wvToolbar__windowingPresetListItem"
+                    ng-repeat="voi in windowingPresets "
+                    ng-click="applyWindowing(voi.windowWidth, voi.windowCenter)"
+                >
+                    {{voi.name}} <small>(L {{voi.windowCenter | number:0}}, W {{voi.windowWidth | number:0}})</small>
+                </li>
+                <!--
+                @todo
+                <li class="wvToolbar__windowingPresetListItem"
+                    ng-click="applyWindowing()"
+                >
+                    CT Extremity,
+                </li>
+                -->
+
+                <!--
+                @todo
+                <li class="wvToolbar__windowingPresetListItem"
+                    ng-click="applyWindowing()"
+                >
+                    DX Bone
+                </li>
+                -->
+
+                <!--
+                @todo
+                <li class="wvToolbar__windowingPresetListItem"
+                    ng-click="applyWindowing()"
+                >
+                    MR Brain
+                </li>
+                -->
+            </ul>
+        </form>
+    </div>
+</div>

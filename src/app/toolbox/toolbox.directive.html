@@ -1,0 +1,17 @@
+<div
+    class="wvToolbar"
+    ng-class="{
+        'wvToolbar--top': vm.position === 'top',
+        'wvToolbar--right': vm.position === 'right',
+        'wvToolbar--big': vm.buttonsSize === 'large'
+    }"
+>
+    <div ng-repeat="groupOrButton in vm.buttonsOrdering" ng-switch="groupOrButton.type" ng-class="{'inline-object': vm.position === 'top'}">
+        <div ng-switch-when="button" ng-switch="groupOrButton.tool" class="inline-object">
+            <wv-toolbox-button-generator wv-button="groupOrButton"></wv-toolbox-button-generator>
+        </div>
+        <div ng-switch-when="group" class="inline-object" ng-class="{'mh10': vm.layoutMode == 'flat' && vm.toolbarPosition == 'top'}">
+            <wv-toolbox-group-generator wv-group="groupOrButton"></wv-toolbox-group-generator>
+        </div>
+    </div>
+</div>

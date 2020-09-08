@@ -1,0 +1,11 @@
+<div class="tbGroup">
+    <div ng-if="vm.toolbox.layoutMode === 'tree'" class="tbGroup__toggl">
+        <button class="wvButton--underline" ng-click="vm.isOpen = !vm.isOpen" ng-class="{active: vm.isToolInGroup(vm.toolbox.tool), 'wvLargeButton': vm.toolbox.buttonsSize == 'large'}">
+            <span class="{{vm.group.iconClasses}}"></span>
+            <span class="wvButton__bottomTriangle" ng-class="{'active': vm.isToolInGroup(vm.toolbox.tool), 'toggled': vm.isOpen}"></span>
+        </button>
+    </div>
+    <div ng-show="vm.isOpen || vm.toolbox.layoutMode === 'flat'" ng-class="{'tbGroup__buttons--bottom': vm.toolbox.layoutMode === 'tree' && vm.toolbox.position === 'top', 'tbGroup__buttons--left': vm.toolbox.layoutMode === 'tree' && vm.toolbox.position === 'right', 'tbGroup__buttons': vm.toolbox.layoutMode === 'flat'}">
+        <wv-toolbox-button-generator wv-button="button" ng-repeat="button in vm.group.buttons" ng-class="{'inline-object': vm.toolbox.position === 'top'}"></wv-toolbox-button-generator>                        
+    </div>
+</div>

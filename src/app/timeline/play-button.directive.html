@@ -1,0 +1,47 @@
+<div class="wv-play-button">
+    <!--  @todo add tooltips -->
+
+    <!-- Play/Pause button -->
+    <label
+        data-title="{{ 'COMPONENTS.TIMELINE.PLAY_REVERSE' | translate | wvCapitalize }}"
+        ng-click="!vm.readonly && vm.playReverse()"
+        ng-show="true || !vm.isPlayingReverse()"
+        class="wv-timeline-controls-button"
+    >
+        <i class="fa fa-play wv-timeline-controls-vflip" class="wv-timeline-controls-vertical-sizing "></i>
+    </label>
+    <label
+        data-title="{{ 'COMPONENTS.TIMELINE.PAUSED' | translate | wvCapitalize }}"
+        ng-click="!vm.readonly && vm.pause()"
+        ng-show="true || vm.isPlaying() || vm.isPlayingReverse()"
+        class="wv-timeline-controls-button"
+    >
+        <i class="fa fa-pause" class="wv-timeline-controls-vertical-sizing"></i>
+    </label>
+    <label
+        data-title="{{ 'COMPONENTS.TIMELINE.PLAY' | translate | wvCapitalize }}"
+        ng-click="!vm.readonly && vm.play()"
+        ng-show="true || !vm.isPlaying()"
+        class="wv-timeline-controls-button"
+    >
+        <i class="fa fa-play" class="wv-timeline-controls-vertical-sizing"></i>
+    </label>
+
+    <!--  Configuration options -->
+    <div class="wv-play-button-config-position-handler"> <!-- This is a 0x0 div to set the position -->
+        <div class="wv-play-button-config">
+            <label>
+                {{ "COMPONENTS.TIMELINE.FRAME_RATE" | translate | wvCapitalize }}
+                <span class="wv-play-button-config-framerate-wrapper">
+                    <input type="range" min="1" max="60"
+                        class="wv-play-button-config-framerate"
+
+                        ng-model="vm.series.frameRate"
+                        ng-disabled="vm.readonly"
+                    />
+                </span>
+                {{vm.series.frameRate}} {{ "COMPONENTS.TIMELINE.FPS" | translate }}
+            </label>
+        </div>
+    </div>
+</div>
