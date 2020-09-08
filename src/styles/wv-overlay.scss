@@ -1,0 +1,125 @@
+$gray: #808080;
+$blue: #1a68bd;
+$red: #8a3d33;
+$green: #488b3a;
+$yellow: #979828;
+$violet: #744087;
+.wv-overlay {
+    color: #b9b628;
+}
+.wv-overlay-icon {
+    width: 64px;
+}
+.wvOverlay__studyBadge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: $gray;
+    z-index: 1;
+}
+.wv-overlay-topleft {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: left;
+}
+.wv-overlay-topright {
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: right;
+}
+.wv-overlay-bottomright {
+    position: absolute;
+    bottom: 18px;
+    right: 0;
+    text-align: right;
+}
+.wv-overlay-bottomleft {
+    position: absolute;
+    bottom: 18px;
+    left: 0;
+    text-align: left;
+}
+.wv-overlay-timeline-wrapper {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+.wv-overlay-topleft,
+.wv-overlay-topright,
+.wv-overlay-bottomright,
+.wv-overlay-bottomleft {
+    padding: 0.2rem;
+    transition: color 200ms, background-color 200ms;
+    background-color: #00000026;
+}
+.wv-overlay-topleft:hover,
+.wv-overlay-topright:hover,
+.wv-overlay-bottomright:hover,
+.wv-overlay-bottomleft:hover {
+    color: #bbba82;
+    background-color: #000000e6;
+}
+.wvPaneOverlay {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    font-weight: 100;
+    text-align: center;
+    color: #a4a62b;
+    font-size: 3rem;
+    line-height: normal;
+}
+.wv-overlay-scrollbar-loaded {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    background-color: red;
+    will-change: right;
+    transform-origin: 0% 50%;
+}
+.wv-overlay-scrollbar-loading {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    background-color: #660000;
+    will-change: right;
+    transform-origin: 0% 50%;
+}
+.wv-overlay-scrollbar-text {
+    position: absolute;
+    bottom: calc(1em + 5px);
+    left: 5px;
+    height: 1em;
+    color: red;
+    font-size: 0.8em;
+    font-family: helvetica;
+}
+.wvOverlay__studyBadge--blue {
+    @extend .wvOverlay__studyBadge;
+    background-color: $blue;
+}
+.wvOverlay__studyBadge--red {
+    @extend .wvOverlay__studyBadge;
+    background-color: $red;
+}
+.wvOverlay__studyBadge--green {
+    @extend .wvOverlay__studyBadge;
+    background-color: $green;
+}
+.wvOverlay__studyBadge--yellow {
+    @extend .wvOverlay__studyBadge;
+    background-color: $yellow;
+}
+.wvOverlay__studyBadge--violet {
+    @extend .wvOverlay__studyBadge;
+    background-color: $violet;
+}

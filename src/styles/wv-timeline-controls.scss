@@ -1,0 +1,118 @@
+.wv-timeline-controls {
+    background-color: rgba(0, 0, 0, 0.45);
+    text-align: center;
+    transition: color 200ms, background-color 200ms;
+    margin-top: 4px;
+}
+.wv-timeline-controls:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+.wv-timeline-controls-vertical-sizing {
+    display: inline-block;
+    line-height: 1em;
+    font-size: 1.1em;
+    font-weight: 600;
+    margin: 0 4px 0;
+}
+.wv-timeline-controls-vflip {
+    &:before,
+    &:after {
+        transform: scaleX(-1);
+        display: inline-block;
+    }
+}
+.wv-timeline-controls-button {
+    display: inline-block;
+    height: 1rem;
+    width: 2.7rem;
+    line-height: 1rem;
+    font-size: 1.6rem;
+    margin: 1px -6px 0 -6px;
+    user-select: none;
+    cursor: pointer;
+}
+.wv-timeline-controls-input {
+    height: 1em;
+    width: 2.3em;
+    box-sizing: unset;
+    border: 0;
+    background-color: transparent;
+    text-align: right;
+}
+.wv-timeline-controls-play-button-wrapper {
+    float: right;
+}
+.wv-play-button {
+    display: inline-block;
+    position: relative;
+    line-height: 1em;
+    height: 3em;
+    width: 5em;
+}
+.wv-play-button:hover .wv-play-button-config-position-handler {
+    visibility: visible;
+}
+.wv-play-button-config-position-handler {
+    visibility: hidden;
+    position: absolute;
+    bottom: 3em;
+    left: 1em;
+    right: 0.5em;
+}
+.wv-play-button-config {
+    position: absolute;
+    bottom: 0;
+    left: -6em;
+    width: 12em;
+    padding: 5px;
+    background-color: hsla(0, 1, 0, 0.5);
+}
+.wv-play-button-config-framerate-wrapper {
+    display: inline-block;
+    margin: 0.25em 0 0.5em 0;
+}
+input[type="range"].wv-play-button-config-framerate {
+    -webkit-appearance: none;
+    border: 0.5px solid $primary;
+    width: 10em;
+}
+input[type="range"].wv-play-button-config-framerate::-webkit-slider-runnable-track {
+    width: 10em;
+    height: 5px;
+    background: #ddd;
+    border: 0;
+    border-radius: 3px;
+}
+input[type="range"].wv-play-button-config-framerate::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 0;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: goldenrod;
+    margin-top: -4px;
+}
+input[type="range"].wv-play-button-config-framerate:focus {
+    outline: none;
+}
+input[type="range"].wv-play-button-config-framerate:focus::-webkit-slider-runnable-track {
+    background: #ccc;
+}
+input[type="range"].wv-play-button-config-framerate::-moz-range-track {
+    width: 10em;
+    height: 5px;
+    background: #ddd;
+    border: 0;
+    border-radius: 3px;
+}
+input[type="range"].wv-play-button-config-framerate::-moz-range-thumb {
+    border: 0;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: goldenrod;
+}
+input[type="range"].wv-play-button-config-framerate:-moz-focusring {
+    outline: 1px solid white;
+    outline-offset: -1px;
+}

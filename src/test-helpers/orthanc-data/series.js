@@ -1,0 +1,246 @@
+window.orthanc = (function(orthanc) {
+	/* jshint -W109 */
+	orthanc.raw = orthanc.raw || {}
+	var raw = orthanc.raw;
+
+	raw['series/a14c33b2-f2c9488a-bde0f4c6-8d4abde2-5bdf3c74'] = {
+	   "AnonymizedFrom" : "1e1ebdee-2ad28da5-0c8ff0f7-e76faac1-e7689d3f",
+	   "ExpectedNumberOfInstances" : null,
+	   "ID" : "a14c33b2-f2c9488a-bde0f4c6-8d4abde2-5bdf3c74",
+	   "Instances" : [
+	      "27b24a79-6ef843d4-1e014566-4cb06360-2b9eda28",
+	      "4fea3870-ae684f35-c57348b1-92f26b50-0f194ffb"
+	   ],
+	   "IsStable" : true,
+	   "LastUpdate" : "20160208T221312",
+	   "MainDicomTags" : {
+	      "ImageOrientationPatient" : "1\\0\\0\\0\\1\\0",
+	      "Manufacturer" : "CPS",
+	      "Modality" : "PT",
+	      "NumberOfSlices" : "545",
+	      "ProtocolName" : "The Protocol",
+	      "SeriesDate" : "20130205",
+	      "SeriesDescription" : "pet wb-uncorrected",
+	      "SeriesInstanceUID" : "1.2.276.0.7230010.3.1.3.2412718405.13728.1454965989.39",
+	      "SeriesNumber" : "4",
+	      "SeriesTime" : "092425.250000",
+	      "SeriesType" : "WHOLE BODY\\IMAGE"
+	   },
+	   "ParentStudy" : "182867c1-053ee022-f1ced2b1-96090146-2b5e6004",
+	   "Status" : "Unknown",
+	   "Type" : "Series"
+	};
+
+	raw['series/a14c33b2-f2c9488a-bde0f4c6-8d4abde2-5bdf3c74/ordered-slices'] = {
+	   "Dicom" : [
+	      "/instances/27b24a79-6ef843d4-1e014566-4cb06360-2b9eda28/file",
+	      "/instances/b891c9c3-37b3353a-d0de824e-6d860e8a-7bda6c6d/file",
+	   ],
+	   "Slices" : [
+	      "/instances/27b24a79-6ef843d4-1e014566-4cb06360-2b9eda28/frames/0",
+	      "/instances/b891c9c3-37b3353a-d0de824e-6d860e8a-7bda6c6d/frames/0",
+	   ],
+	   "SlicesShort" : [
+	      [ "27b24a79-6ef843d4-1e014566-4cb06360-2b9eda28", 0, 1 ],
+	      [ "b891c9c3-37b3353a-d0de824e-6d860e8a-7bda6c6d", 0, 1 ],
+	   ],
+	   "Type" : "Volume"
+	};
+
+	raw['series/a763443a-c8e1bc0a-c557ae4f-ed8acaf3-7a526448'] = {
+	   "AnonymizedFrom" : "a21d1bc0-845a9fde-407e3d12-47bec165-40b94267",
+	   "ExpectedNumberOfInstances" : null,
+	   "ID" : "a763443a-c8e1bc0a-c557ae4f-ed8acaf3-7a526448",
+	   "Instances" : [
+	      "b4315b65-8cd20f50-036c510c-6776a8e0-b515e775",
+	      "0d76c26b-1e36515d-0fec1815-7db3052a-1c5c5d6e"
+	   ],
+	   "IsStable" : true,
+	   "LastUpdate" : "20160208T221404",
+	   "MainDicomTags" : {
+	      "ContrastBolusAgent" : "",
+	      "Manufacturer" : "GE MEDICAL SYSTEMS",
+	      "Modality" : "XA",
+	      "PerformedProcedureStepDescription" : "Coronarographie",
+	      "ProtocolName" : "The Protocol",
+	      "SeriesDate" : "20130812",
+	      "SeriesDescription" : "Coronarographie",
+	      "SeriesInstanceUID" : "1.2.276.0.7230010.3.1.3.2412718405.13728.1454966042.6748",
+	      "SeriesNumber" : "1",
+	      "SeriesTime" : "170221.000"
+	   },
+	   "ParentStudy" : "4eddbf0e-719f42fb-4c6cea20-a778371c-51868ee5",
+	   "Status" : "Unknown",
+	   "Type" : "Series"
+	};
+
+	raw['series/a763443a-c8e1bc0a-c557ae4f-ed8acaf3-7a526448/ordered-slices'] = {
+		"Dicom" : [
+		  -"/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/file",
+    	   "/instances/0d76c26b-1e36515d-0fec1815-7db3052a-1c5c5d6e/file"
+		],
+		"Slices" : [
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/0",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/1",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/2",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/3",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/4",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/5",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/6",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/7",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/8",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/9",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/10",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/11",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/12",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/13",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/14",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/15",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/16",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/17",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/18",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/19",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/20",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/21",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/22",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/23",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/24",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/25",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/26",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/27",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/28",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/29",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/30",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/31",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/32",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/33",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/34",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/35",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/36",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/37",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/38",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/39",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/40",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/41",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/42",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/43",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/44",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/45",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/46",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/47",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/48",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/49",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/50",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/51",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/52",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/53",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/54",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/55",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/56",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/57",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/58",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/59",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/60",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/61",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/62",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/63",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/64",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/65",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/66",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/67",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/68",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/69",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/70",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/71",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/72",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/73",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/74",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/75",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/76",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/77",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/78",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/79",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/80",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/81",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/82",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/83",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/84",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/85",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/86",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/87",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/88",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/89",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/90",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/91",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/92",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/93",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/94",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/95",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/96",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/97",
+		  "/instances/b4315b65-8cd20f50-036c510c-6776a8e0-b515e775/frames/98",
+		  "/instances/0d76c26b-1e36515d-0fec1815-7db3052a-1c5c5d6e/frames/0",
+		  "/instances/0d76c26b-1e36515d-0fec1815-7db3052a-1c5c5d6e/frames/1",
+		  "/instances/0d76c26b-1e36515d-0fec1815-7db3052a-1c5c5d6e/frames/2",
+		  "/instances/0d76c26b-1e36515d-0fec1815-7db3052a-1c5c5d6e/frames/3",
+		  "/instances/0d76c26b-1e36515d-0fec1815-7db3052a-1c5c5d6e/frames/4",
+		  "/instances/0d76c26b-1e36515d-0fec1815-7db3052a-1c5c5d6e/frames/5",
+		  "/instances/0d76c26b-1e36515d-0fec1815-7db3052a-1c5c5d6e/frames/6",
+		  "/instances/0d76c26b-1e36515d-0fec1815-7db3052a-1c5c5d6e/frames/7",
+		  "/instances/0d76c26b-1e36515d-0fec1815-7db3052a-1c5c5d6e/frames/8",
+		  "/instances/0d76c26b-1e36515d-0fec1815-7db3052a-1c5c5d6e/frames/9",
+		  "/instances/0d76c26b-1e36515d-0fec1815-7db3052a-1c5c5d6e/frames/10",
+		  "/instances/0d76c26b-1e36515d-0fec1815-7db3052a-1c5c5d6e/frames/11",
+		  "/instances/0d76c26b-1e36515d-0fec1815-7db3052a-1c5c5d6e/frames/12",
+		  "/instances/0d76c26b-1e36515d-0fec1815-7db3052a-1c5c5d6e/frames/13",
+		  "/instances/0d76c26b-1e36515d-0fec1815-7db3052a-1c5c5d6e/frames/14",
+		  "/instances/0d76c26b-1e36515d-0fec1815-7db3052a-1c5c5d6e/frames/15",
+		  "/instances/0d76c26b-1e36515d-0fec1815-7db3052a-1c5c5d6e/frames/16",
+		  "/instances/0d76c26b-1e36515d-0fec1815-7db3052a-1c5c5d6e/frames/17",
+		  "/instances/0d76c26b-1e36515d-0fec1815-7db3052a-1c5c5d6e/frames/18",
+		  "/instances/0d76c26b-1e36515d-0fec1815-7db3052a-1c5c5d6e/frames/19",
+		  "/instances/0d76c26b-1e36515d-0fec1815-7db3052a-1c5c5d6e/frames/20",
+		  "/instances/0d76c26b-1e36515d-0fec1815-7db3052a-1c5c5d6e/frames/21",
+		  "/instances/0d76c26b-1e36515d-0fec1815-7db3052a-1c5c5d6e/frames/22",
+		  "/instances/0d76c26b-1e36515d-0fec1815-7db3052a-1c5c5d6e/frames/23",
+		  "/instances/0d76c26b-1e36515d-0fec1815-7db3052a-1c5c5d6e/frames/24",
+		  "/instances/0d76c26b-1e36515d-0fec1815-7db3052a-1c5c5d6e/frames/25",
+		  "/instances/0d76c26b-1e36515d-0fec1815-7db3052a-1c5c5d6e/frames/26",
+		  "/instances/0d76c26b-1e36515d-0fec1815-7db3052a-1c5c5d6e/frames/27",
+		  "/instances/0d76c26b-1e36515d-0fec1815-7db3052a-1c5c5d6e/frames/28",
+		  "/instances/0d76c26b-1e36515d-0fec1815-7db3052a-1c5c5d6e/frames/29",
+		],
+		"SlicesShort" : [
+		  [ "b4315b65-8cd20f50-036c510c-6776a8e0-b515e775", 0, 99 ],
+		  [ "0d76c26b-1e36515d-0fec1815-7db3052a-1c5c5d6e", 0, 30 ],
+		],
+		"Type" : "Sequence"
+	}
+
+	raw['studies/4eddbf0e-719f42fb-4c6cea20-a778371c-51868ee5'] = {
+	   "AnonymizedFrom" : "c621d362-3e00b127-58e523b1-0fee4e24-0084dc6c",
+	   "ID" : "4eddbf0e-719f42fb-4c6cea20-a778371c-51868ee5",
+	   "IsStable" : true,
+	   "LastUpdate" : "20160208T221404",
+	   "MainDicomTags" : {
+	      "InstitutionName" : "The Hospital",
+	      "RequestingPhysician" : "THE^OTHER^DOCTOR",
+	      "StudyDate" : "20130812",
+	      "StudyDescription" : "Coronarographie",
+	      "StudyInstanceUID" : "1.2.276.0.7230010.3.1.2.2412718405.13728.1454966042.6747",
+	      "StudyTime" : "164709.000"
+	   },
+	   "ParentPatient" : "ae8fe380-dd9aa5a7-a956d908-5fe7cf6b-87d0d028",
+	   "PatientMainDicomTags" : {
+	      "PatientBirthDate" : "19530601",
+	      "PatientID" : "3456",
+	      "PatientName" : "CARDIO"
+	   },
+	   "Series" : [ "a763443a-c8e1bc0a-c557ae4f-ed8acaf3-7a526448" ],
+	   "Type" : "Study"
+	}
+
+
+
+	return orthanc;
+})(window.orthanc || {});

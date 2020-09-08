@@ -1,0 +1,45 @@
+wv-webviewer {
+    display: block;
+    height: 100%;
+    overflow: hidden;
+}
+@import "variable";
+@import "button";
+@import "exitButton";
+@import "studyIsland";
+@import "helpers";
+@import "notice";
+@import "layout";
+@import "serieslist";
+@import "toolbar";
+@import "video";
+@import "studyInformationBreadcrumb";
+@import "selectionActionlist";
+@import "wv-overlay.scss";
+@import "wv-pdf-viewer.scss";
+@import "wv-splitpane.scss";
+@import "wv-timeline.scss";
+@import "wv-timeline-controls.scss";
+@import "wv-loadingbar.scss";
+@import "wv-disclaimer";
+@import "tb-group";
+wv-viewport {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    > div {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    > div > .wv-cornerstone-enabled-image {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+}
+.wv-draggable-clone {
+    width: 150px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.25);
+}

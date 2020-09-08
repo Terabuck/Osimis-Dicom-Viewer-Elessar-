@@ -1,0 +1,72 @@
+$gray: #808080;
+$blue: #1a68bd;
+$red: #8a3d33;
+$green: #488b3a;
+$yellow: #979828;
+$violet: #744087;
+%wvStudyIsland {
+    margin: 0.2rem;
+    border: 1px solid gray;
+}
+%wvStudyIsland__header {
+    background-color: $gray;
+    padding: 0.2rem;
+    line-height: 2rem;
+    overflow: hidden;
+    width: 100%;
+}
+.wvStudyIsland__actions {
+    float: right;
+    margin-top: -1rem;
+    margin-right: -0.2rem;
+    margin-bottom: -1rem;
+}
+.wvStudyIsland__actions--oneCol {
+    float: none;
+    text-align: center;
+}
+.wvStudyIsland__main {
+    padding: 0.4rem;
+    color: hsl(0, 0%, 100%);
+    width: 100%;
+}
+.wvStudyIsland--blue {
+    @extend %wvStudyIsland;
+    border-color: $blue;
+}
+.wvStudyIsland__header--blue {
+    @extend %wvStudyIsland__header;
+    background-color: #213b57;
+}
+.wvStudyIsland--red {
+    @extend %wvStudyIsland;
+    border-color: $red;
+}
+.wvStudyIsland__header--red {
+    @extend %wvStudyIsland__header;
+    background-color: #441f1a;
+}
+.wvStudyIsland--green {
+    @extend %wvStudyIsland;
+    border-color: $green;
+}
+.wvStudyIsland__header--green {
+    @extend %wvStudyIsland__header;
+    background-color: #38540d;
+}
+.wvStudyIsland--yellow {
+    @extend %wvStudyIsland;
+    border-color: $yellow;
+}
+.wvStudyIsland__header--yellow {
+    @extend %wvStudyIsland__header;
+    background-color: #5c5c23;
+}
+.wvStudyIsland--violet {
+    @extend %wvStudyIsland;
+    border-color: $violet;
+}
+.wvStudyIsland__header--violet {
+    @extend %wvStudyIsland__header;
+    background-color: #432150;
+}

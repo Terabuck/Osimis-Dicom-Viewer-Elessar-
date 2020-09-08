@@ -1,0 +1,37 @@
+.wv-loadingbar-image-bar {
+    cursor: pointer;
+}
+.wv-loadingbar-not-loaded {
+    fill: #ffffff1a;
+}
+.wv-loadingbar-not-loaded,
+.wv-loadingbar-LOW-quality {
+    transition: none;
+}
+.wv-loadingbar-not-loaded:hover {
+    fill: #ffffff33;
+}
+.wv-loadingbar-LOSSLESS-quality,
+.wv-loadingbar-PIXELDATA-quality {
+    fill: #03aa034f;
+}
+.wv-loadingbar-LOSSLESS-quality:hover,
+.wv-loadingbar-LOSSLESS-quality.wv-loadingbar-active,
+.wv-loadingbar-PIXELDATA-quality:hover,
+.wv-loadingbar-PIXELDATA-quality.wv-loadingbar-active {
+    fill: #0393036b;
+}
+.wv-loadingbar-LOW-quality {
+    fill: #db03034f;
+}
+.wv-loadingbar-LOW-quality:hover,
+.wv-loadingbar-LOW-quality.wv-loadingbar-active {
+    fill: #db030385;
+}
+.wv-loadingbar-MEDIUM-quality {
+    fill: #db52034f;
+}
+.wv-loadingbar-MEDIUM-quality:hover,
+.wv-loadingbar-MEDIUM-quality.wv-loadingbar-active {
+    fill: #f15e0385;
+}
