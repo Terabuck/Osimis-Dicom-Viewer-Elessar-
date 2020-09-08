@@ -14,7 +14,8 @@ Motivated to avoid the visual stress of high contrast of black and blue, the int
 Pre-requisites:
 Files must be includded in a zip file (1.3.1.zip) in the backend/ThirdPArtyDownloads folder
 
-Examples (Anonymized)
+Examples (Anonymized):
+
 Chest xRay (COVID-19): https://misimagenes.online/ym166
 
 Face CT: https://misimagenes.online/g9b6v
