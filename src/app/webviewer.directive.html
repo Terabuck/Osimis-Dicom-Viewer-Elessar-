@@ -1,0 +1,614 @@
+<!-- browser specific warning model -->
+<div ng-show="vm.openIncompatibleBrowserModal" class="wvWarning wvPrintExclude">
+    <div class="wvWarning-content clearfix">
+        <span class="wvWarning-text ">
+            <h2 class="mb10"><i class="fa fa-exclamation-triangle wvWarning-icon mr5"></i>Warning!</h2>
+            <p class="mn mb10" style="color:#000">
+                {{ 'GENERAL_PARAGRAPHS.INCOMPATIBLE_BROWSER' | translate }}
+                </h5>
+        </span>
+    </div>
+    <div class="text-right mb10 mr10">
+        <button class="btn btn-primary" ng-click="vm.onCloseWarning()">OK</button>
+    </div>
+</div>
+
+<div class="wvScreenToSmallWarning wvPrintExclude">
+    <div class="wvScreenToSmallWarning-content wvPrintExclude">
+        <p>{{ 'GENERAL_PARAGRAPHS.SCREEN_TOO_SMALL' | translate | wvCapitalize }}</p>
+    </div>
+</div>
+<wv-layout wv-topleft-enabled="$isTopLeftEnabled" wv-topright-enabled="$isTopRightEnabled"
+    wv-right-enabled="$isRightEnabled" wv-keyboard-shortcut>
+    <!--
+    Layout: top zones (1, 2, 3 and 4)
+    -->
+    <wv-layout-top wv-enabled="vm.studyinformationEnabled || $isTopLeftEnabled || $isTopRightEnabled"
+        class="wvPrintExclude">
+        <!--
+        Layout: top-left
+
+        @description
+        Parameterizable zone.
+        The user of the `wvWebviewer` directive can inject content here. For
+        instance, a button to quit the application, or a study list.
+
+        @example
+        ```html
+        <wv-webviewer ...>
+            <wv-layout-top-left>
+                User content here...
+            </wv-layout-top-left>
+        </wv-webviewer>
+        ```
+        -->
+        <wv-layout-top1 ng-transclude="wvLayoutTopLeft"></wv-layout-top1>
+
+        <!--
+        Layout: top2
+
+        @description
+        @todo
+        -->
+        <wv-layout-top2 ng-show="vm.toolbarEnabled">
+        </wv-layout-top2>
+
+        <!--
+        Layout: top3
+
+        @description
+        Zone containing the study information.
+        -->
+        <wv-layout-top3 ng-show="vm.studyinformationEnabled">
+            <wv-study-information-breadcrumb wv-study-id="vm.selectedPaneStudyId" class="clearfix">
+            </wv-study-information-breadcrumb>
+        </wv-layout-top3>
+
+        <!--
+        Layout: top-right
+
+        @description
+        Parameterizable zone.
+        The user of the `wvWebviewer` directive can inject content here. For
+        instance, additional controls to let the wvb interact with an host app.
+
+        @example
+        ```html
+        <wv-webviewer ...>
+            <wv-layout-top-right>
+                User content here... For instance buttons:
+                <button
+                    bs-tooltip
+                    data-placement="bottom"
+                    data-title="Viewer mode"
+                    class="wvButton"
+                    ng-click="vm.hideEditor()"
+                    ng-class="{'active': !vm.isEditorShown}"
+                >
+                    <span class="glyphicon glyphicon-eye_open"></span>
+                </button>
+                <button
+                    bs-tooltip
+                    data-placement="bottom"
+                    data-title="Editor mode"
+                    class="wvButton"
+                    ng-click="vm.showEditor()"
+                    ng-class="{'active': vm.isEditorShown}"
+                >
+                    <span class="glyphicon glyphicon-notes"></span>
+                </button>
+            </wv-layout-top-right>
+        </wv-webviewer>
+        ```
+        -->
+        <wv-layout-top4 ng-transclude="wvLayoutTopRight">
+        </wv-layout-top4>
+    </wv-layout-top>
+
+    <!--
+    Layout: left
+
+    @description
+    Zone containing the study's information and the list of series.
+    -->
+    <wv-layout-left wv-enabled="vm.serieslistEnabled || vm.studyinformationEnabled"
+        wv-handles-enabled="vm.leftHandlesEnabled" wv-is-small="vm.studyIslandsDisplayMode === 'oneCol'"
+        wv-closed="vm.isAsideClosed" class="wvPrintExclude">
+        <wv-layout-left1>
+            <div>
+                <!-- Homepage Link -->
+                <div style="display: inline">
+                    <a href="https://misimagenes.online" target="_blank" alt="Mis Imagenes Online Homepage"><img
+                            src="images/misimagenesonline.svg" alt="misimagenes.online"
+                            style="max-width: 3.2rem; margin: 3px 2px 1px"></a>
+                </div>
+                <!-- Fullscreen Snippet -->
+                <div style="display: inline">
+                    <style>
+                        :-webkit-full-screen {}
+
+                        :-moz-full-screen {}
+
+                        :-ms-fullscreen {}
+
+                        :fullscreen {}
+                    </style><img onclick="javascript:openFullscreen()" src="images/fullscreen.svg" alt="Fullscreen"
+                        style="max-width: 3.2rem; margin: 3px 2px 1px">
+                    <script>
+                        var elem = document.documentElement;
+                        function openFullscreen() {
+                            if (elem.requestFullscreen) {
+                                elem.requestFullscreen();
+                            } else if (elem.mozRequestFullScreen) {
+                                elem.mozRequestFullScreen();
+                            } else if (elem.webkitRequestFullscreen) {
+                                elem.webkitRequestFullscreen();
+                            } else if (elem.msRequestFullscreen) {
+                                elem.msRequestFullscreen();
+                            }
+                        }
+                    </script>
+                    </img>
+                </div>
+                <!-- QR Snippet -->
+                <div style="display: inline">
+                    <style>
+                        *,
+                        *::before,
+                        *::after {}
+
+                        .dialog-title {
+                            margin-top: 7px;
+                            margin-bottom: 1px;
+                            padding-bottom: 9px;
+                            padding-left: 4px;
+                            font-size: 1.3rem;
+                            margin-right: -3px;
+                        }
+
+                        .hidden {
+                            display: none;
+                        }
+
+                        button,
+                        .button {
+                            display: inline-flex;
+                            align-items: center;
+                            justify-content: center;
+                            height: auto;
+                            color: #929796;
+                            text-align: center;
+                            padding: .5rem 0;
+                            font-size: 1rem;
+                            font-weight: 600;
+                            line-height: 1.1;
+                            border: 1px solid #ddd;
+                            cursor: pointer;
+                            background-color: #f9f9f9;
+                        }
+
+                        button:hover,
+                        .button:hover {
+                            border-color: #cdd;
+                        }
+
+                        .qr-dialog {
+                            margin-top: .3rem;
+                            display: none;
+                            max-width: 100%;
+                            z-index: -1;
+                            border: 1px solid #2a9164;
+                            background-color: #474c40;
+                        }
+
+                        .qr-dialog.is-open {
+                            display: block;
+                            z-index: 2;
+                        }
+
+                        .qr-close-button {
+                            background-color: transparent;
+                            border: none;
+                            width: 3rem;
+                            height: 3rem;
+                            padding: 3px;
+                            float: right;
+                        }
+                    </style> <img alt="QR" class="qr-button" src="images/qricon.svg"
+                        style="max-width: 3.2rem; margin: 3px 2px 1px">
+                    <div class="qr-dialog">
+                        <img alt="Close" class="qr-close-button" src="images/close.svg"></img>
+                        <h3 class="dialog-title"> Escanee el Código QR (Atención, recuerde que se trata de datos
+                            médicos, personales y privados) </h3>
+
+                        <div><img id="img" alt="QR" src="images/qricon.svg"
+                                style="display: block;max-width: 90%;margin: .5rem;" /> </div>
+                    </div>
+                    <script>
+                        const qrButton = document.querySelector(".qr-button");
+                        const qrDialog = document.querySelector(".qr-dialog");
+                        const qrCloseButton = document.querySelector(".qr-close-button");
+                        var api_url =
+                            "https://misimagenes.online/yourls-api.php?timestamp=1595356194&signature=19627a896540e1f7381dd385499647ed";
+                        var longUrl = escape(window.location.href);
+                        var api_params = { action: "shorturl", format: "json", url: longUrl };
+                        qrButton.addEventListener("click", (event) => {
+                            const response = $.get(
+                                api_url,
+                                { action: "shorturl", format: "json", url: longUrl },
+                                function (data) {
+                                    document.getElementById("img").src = data.shorturl + ".qr";
+                                    {
+                                        qrDialog.classList.add("is-open");
+                                    }
+                                }
+                            );
+                        });
+                        qrCloseButton.addEventListener("click", (event) => {
+                            qrDialog.classList.remove("is-open");
+                        });
+                    </script>
+                </div>
+                <!-- Share Snippet -->
+                <div style="display: inline">
+                    <style>
+                        .share-dialog {
+                            margin-top: .3rem;
+                            display: none;
+                            max-width: 100%;
+                            z-index: -1;
+                            border: 1px solid #2a9164;
+                            background-color: #474c40;
+                        }
+
+                        .share-dialog.is-open {
+                            display: block;
+                            z-index: 2;
+                        }
+
+                        .targets {
+                            display: contents;
+                            margin: .5rem;
+                        }
+
+                        .share-icon {
+                            max-width: 3rem;
+                            margin: .3rem;
+                        }
+
+                        .close-button {
+                            background-color: transparent;
+                            border: none;
+                            width: 3rem;
+                            height: 3rem;
+                            padding: 3px;
+                            float: right;
+                        }
+                    </style> <img alt="Compartir" class="share-button" src="images/sharethis.svg"
+                        style="max-width: 3.2rem; margin: 3px 2px 1px">
+                    <div class="share-dialog">
+                        <img alt="Close" class="close-button" src="images/close.svg"></img>
+
+                        <h3 class="dialog-title"> Compartir (Atención, recuerde que se trata de datos médicos,
+                            personales y privados) </h3>
+
+                        <div class="targets"> <img alt="Facebook" onclick="fbShare()" src="images/facebook.svg"
+                                class="share-icon" /> <img alt="Twitter" onclick="ttShare()" src="images/twitter.svg"
+                                class="share-icon" /> <img alt="LinkedIn" onclick="inShare()" src="images/linkedin.svg"
+                                class="share-icon" /> <img alt="WhatsApp" onclick="waShare()" src="images/whatsapp.svg"
+                                class="share-icon" /> <img alt="QR" onclick="tgShare()" src="images/telegram.svg"
+                                class="share-icon" /> <img alt="Email" onclick="emShare()" src="images/email.svg"
+                                class="share-icon" /> </div>
+                    </div>
+                    <script>
+                        const shareButton = document.querySelector(".share-button");
+                        const shareDialog = document.querySelector(".share-dialog");
+                        const closeButton = document.querySelector(".close-button");
+                        var api_url =
+                            "https://misimagenes.online/yourls-api.php?timestamp=1595356194&signature=19627a896540e1f7381dd385499647ed";
+                        var longUrl = escape(window.location.href);
+                        var api_params = { action: "shorturl", format: "json", url: longUrl };
+                        shareButton.addEventListener("click", (event) => {
+                            const response = $.get(
+                                api_url,
+                                { action: "shorturl", format: "json", url: longUrl },
+                                function (data) {
+                                    if (navigator.share) {
+                                        navigator
+                                            .share({ title: "Compartir", url: data.shorturl })
+                                            .then(() => {
+                                                console.log("Gracias por compartir!");
+                                            })
+                                            .catch(console.error);
+                                    } else {
+                                        shareDialog.classList.add("is-open");
+                                    }
+                                }
+                            );
+                        });
+                        closeButton.addEventListener("click", (event) => {
+                            shareDialog.classList.remove("is-open");
+                        });
+                        function fbShare() {
+                            var response = $.get(
+                                api_url,
+                                { action: "shorturl", format: "json", url: longUrl },
+                                function (data) {
+                                    window.open(
+                                        "https://www.facebook.com/sharer/sharer.php?u=" +
+                                        escape(data.shorturl) +
+                                        "&t=" +
+                                        document.title,
+                                        "",
+                                        "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600"
+                                    );
+                                }
+                            );
+                        }
+                        function ttShare() {
+                            var response = $.get(api_url, api_params, function (data) {
+                                window.open(
+                                    "http://twitter.com/share?url=" +
+                                    encodeURIComponent(data.shorturl) +
+                                    "&text=" +
+                                    encodeURIComponent("Por favor, revisa este estudio:"),
+                                    "twitsharer",
+                                    "toolbar=0,status=0,width=626,height=436"
+                                );
+                            });
+                        }
+                        function inShare() {
+                            var response = $.get(api_url, api_params, function (data) {
+                                window.open(
+                                    "https://www.linkedin.com/shareArticle?url=" +
+                                    escape(data.shorturl) +
+                                    "&title=" +
+                                    document.title,
+                                    "",
+                                    "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600"
+                                );
+                            });
+                        }
+                        function waShare() {
+                            var response = $.get(api_url, api_params, function (data) {
+                                window.open(
+                                    "https://wa.me/?text=" +
+                                    encodeURIComponent("Por favor, revisa este estudio en: ") +
+                                    encodeURIComponent(data.shorturl),
+                                    "",
+                                    "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600"
+                                );
+                            });
+                        }
+                        function tgShare() {
+                            var response = $.get(api_url, api_params, function (data) {
+                                window.open(
+                                    "https://telegram.me/share/url?url=" + data.shorturl,
+                                    "",
+                                    "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600"
+                                );
+                            });
+                        }
+                        function emShare() {
+                            var response = $.get(api_url, api_params, function (data) {
+                                window.open(
+                                    "mailto:?Subject=" +
+                                    encodeURIComponent(document.title) +
+                                    "&body=" +
+                                    encodeURI(data.shorturl)
+                                );
+                            });
+                        }
+                    </script>
+                </div>
+
+            </div>
+            <!-- Study Picker -->
+            <wv-studylist ng-if="vm.studyIslandsDisplayMode !== 'oneCol'" class="float__left"
+                style="max-width: calc(100% - 4.5rem);" ng-show="vm.serieslistEnabled" wv-readonly="vm.readonly"
+                wv-pickable-study-id-labels="vm.pickableStudyIdLabels" wv-pickable-study-ids="vm.pickableStudyIds"
+                wv-selected-study-ids="vm.selectedStudyIds"></wv-studylist>
+
+            <!-- Display mode toggle -->
+            <div class="float__right wvButton" ng-show="vm.studyIslandsDisplayMode === 'oneCol'"
+                ng-click="vm.studyIslandsDisplayMode = 'grid'" bs-tooltip bs-enabled="!vm.window.USER_IS_TOUCHING"
+                data-title="{{ 'COMPONENTS.ASIDE_DISPLAY_MODE.GRID_DISPLAY' | translate | wvCapitalize }}"
+                placement="right">
+                <i class="fa fa-th"></i>
+
+            </div>
+            <div class="float__right wvButton" ng-show="vm.studyIslandsDisplayMode === 'grid'"
+                ng-click="vm.studyIslandsDisplayMode = 'list'" bs-tooltip bs-enabled="!vm.window.USER_IS_TOUCHING"
+                data-title="{{ 'COMPONENTS.ASIDE_DISPLAY_MODE.LIST_DISPLAY' | translate | wvCapitalize }}"
+                placement="right">
+                <i class="fa fa-th-list"></i>
+            </div>
+            <div class="float__right wvButton" ng-show="vm.studyIslandsDisplayMode === 'list'"
+                ng-click="vm.studyIslandsDisplayMode = 'oneCol'" bs-tooltip bs-enabled="!vm.window.USER_IS_TOUCHING"
+                data-title="{{ 'COMPONENTS.ASIDE_DISPLAY_MODE.ONE_COL_DISPLAY' | translate | wvCapitalize }}"
+                placement="right">
+                <i class="fa fa-ellipsis-v"></i>
+            </div>
+            <p ng-if="vm.displayDisclaimer && vm.studyIslandsDisplayMode !== 'oneCol'" class="clear disclaimer mbn">
+                {{ "GENERAL_PARAGRAPHS.DISCLAIMER_PARAGRAPH" | translate }}</p>
+            <ng-transclude ng-transclude-slot="wvLayoutLeftTop">
+            </ng-transclude>
+        </wv-layout-left1>
+        <wv-layout-left2>
+            <!-- Study Islands -->
+            <wv-study-island ng-show="vm.serieslistEnabled" ng-repeat="$studyId in vm.selectedStudyIds track by $index"
+                wv-display-mode="vm.studyIslandsDisplayMode" wv-study-id="$studyId"
+                wv-study-download-enabled="vm.studyDownloadEnabled" wv-video-display-enabled="vm.videoDisplayEnabled"
+                wv-item-selection-enabled="vm.seriesItemSelectionEnabled"
+                wv-selected-series-ids="vm.selectedSeriesIds[$studyId]"
+                wv-selected-report-ids="vm.selectedReportIds[$studyId]"
+                wv-selected-video-ids="vm.selectedVideoIds[$studyId]"
+                wv-show-no-report-icon="vm.showNoReportIconInSeriesList"></wv-study-island>
+        </wv-layout-left2>
+
+        <wv-layout-left3>
+            <!--
+            Layout: left bottom
+
+            @description
+            Parameterizablee zone.
+            The user of the `wvWebviewer` directive can inject content here and
+            configure advanced display options. Have a look at the
+            `wvLayoutLeftBottom` directive for the advanced configuration.
+
+            @example
+            ```html
+            <wv-webviewer ...>
+                <wv-layout-left-bottom>
+                    User content here...
+                </wv-layout-left-bottom>
+            </wv-webviewer>
+            ```
+            -->
+            <ng-transclude ng-transclude-slot="wvLayoutLeftBottom">
+                <!-- Default layout left bottom disabled -->
+                <wv-layout-left-bottom ng-init="falseValue = false" wv-enabled="falseValue">
+                </wv-layout-left-bottom>
+            </ng-transclude>
+        </wv-layout-left3>
+    </wv-layout-left>
+
+    <!--
+    Layout: right
+
+    @description
+    Parameterizable zone.
+    The user of the `wvWebviewer` directive can inject content here and
+    configure advanced display options. Have a look at the `wvLayoutRight`
+    directive for the advanced configuration.
+
+    @todo ng-if to make sure javascript is loaded after layout-main one's
+
+    @example
+    ```html
+    <wv-webviewer ...>
+        <wv-layout-right>
+            User content here...
+        </wv-layout-right>
+    </wv-webviewer>
+    ```
+    -->
+    <ng-transclude ng-transclude-slot="wvLayoutRight">
+        <!-- Default layout right disabled -->
+        <wv-layout-right ng-init="falseValue = false" wv-enabled="falseValue">
+        </wv-layout-right>
+    </ng-transclude>
+
+    <!--
+    Layout: bottom
+
+    @description
+    This zone contains the notices. It is only used on mobile at the moment.
+    -->
+    <wv-layout-bottom wv-enabled="vm.noticeEnabled" class="wvPrintExclude">
+        <wv-notice ng-if="vm.noticeEnabled" wv-content="vm.noticeText" wv-on-close="vm.noticeEnabled = false">
+        </wv-notice>
+    </wv-layout-bottom>
+
+    <!--
+    Layout: main
+
+    @description
+    This zone contains the viewports & the toolbar.
+    -->
+    <wv-layout-main>
+        <!--
+        Toolbar
+        -->
+        <wv-toolbox ng-show="vm.toolbarEnabled" wv-readonly="vm.readonly" wv-toolbox-buttons="vm.tools"
+            wv-active-tool="vm.activeTool" wv-position="vm.toolbarPosition"
+            wv-on-action-clicked="vm.onActionClicked($action)" wv-windowing-presets="vm.windowingPresets"
+            wv-on-windowing-preset-selected="vm.onWindowingPresetSelected($windowWidth, $windowCenter);"
+            wv-toolbox-buttons-ordering="vm.toolboxButtonsOrdering" wv-toolbox-buttons-size="vm.buttonsSize"
+            wv-custom-command-icon-label="vm.customCommandIconLabel"
+            wv-custom-command-icon-class="vm.customCommandIconClass" wv-layout-mode="vm.toolbarLayoutMode"
+            class="wvPrintExclude"></wv-toolbox>
+
+        <!--
+        Splitpane
+        -->
+        <wv-splitpane wv-readonly="vm.readonly" class="wvPrintFullPage" ng-class="{
+                'wvLayout__splitpane--toolbarAtTop': vm.toolbarEnabled && vm.buttonsSize == 'small' && vm.toolbarPosition === 'top',
+                'wvLayout__splitpane--toolbarAtRight': vm.toolbarEnabled && vm.buttonsSize == 'small' && vm.toolbarPosition === 'right',
+                'wvLayout__splitpane--bigToolbarAtRight': vm.toolbarEnabled && vm.buttonsSize == 'large' && vm.toolbarPosition === 'right',
+                'wvLayout__splitpane--bigToolbarAtTop': vm.toolbarEnabled && vm.buttonsSize == 'large' && vm.toolbarPosition === 'top',
+            }">
+            <wv-pane-policy wv-pane="$pane" wv-pane-position="$position"
+                wv-on-item-dropped="!vm.readonly && vm.onItemDroppedToPane($position.x, $position.y, $data);">
+
+                <!--
+                PDF Report
+                -->
+                <wv-pdf-viewer ng-if="$pane.reportId" wv-report-id="$pane.reportId"></wv-pdf-viewer>
+
+                <!--
+                Video
+                -->
+                <wv-video ng-if="!!$pane.videoId" wv-video-id="$pane.videoId"></wv-video>
+
+                <!--
+                Viewport
+                -->
+                <wv-viewport ng-if="!!$pane.seriesId" vp-series-id="$pane.seriesId" wv-size="{width: 1.0, height: 1.0}"
+                    wv-lossless="true" wv-series="$pane.series" wv-image="$image"
+                    wv-droppable-series-ext="!vm.readonly && vm.serieslistEnabled"
+                    wv-scroll-on-wheel-series-ext="!vm.readonly" wv-viewport="$pane.csViewport"
+                    wv-viewport-model="vm.viewports[$pane.$$hashKey]" wv-image-index="$pane.imageIndex"
+                    wv-mobile-viewport-tool="!vm.readonly && vm.tools.combinedTool"
+                    wv-windowing-viewport-tool="!vm.readonly && !vm.mobileInteraction && vm.tools.windowing"
+                    wv-angle-measure-viewport-tool="!vm.readonly && !vm.mobileInteraction && vm.tools.angleMeasure"
+                    wv-simple-angle-measure-viewport-tool="!vm.readonly && !vm.mobileInteraction && vm.tools.simpleAngleMeasure"
+                    wv-length-measure-viewport-tool="!vm.readonly && !vm.mobileInteraction && vm.tools.lengthMeasure"
+                    wv-elliptical-roi-viewport-tool="!vm.readonly && !vm.mobileInteraction && vm.tools.ellipticalRoi"
+                    wv-cross-hair-viewport-tool="!vm.readonly && !vm.mobileInteraction && vm.tools.crossHair"
+                    wv-zoom-viewport-tool="!vm.readonly && !vm.mobileInteraction && vm.tools.zoom"
+                    wv-pan-viewport-tool="!vm.readonly && !vm.mobileInteraction && vm.tools.pan"
+                    wv-pixel-probe-viewport-tool="!vm.readonly && !vm.mobileInteraction && vm.tools.pixelProbe"
+                    wv-rectangle-roi-viewport-tool="!vm.readonly && !vm.mobileInteraction && vm.tools.rectangleRoi"
+                    wv-magnifying-glass-viewport-tool="!vm.readonly && !vm.mobileInteraction && {
+                        enabled: vm.tools.magnify.enabled,
+                        magnificationLevel: vm.tools.magnify.magnificationLevel,
+                        magnifyingGlassSize: vm.tools.magnify.magnifyingGlassSize
+                    }"
+                    wv-arrow-annotate-viewport-tool="!vm.readonly && !vm.mobileInteraction && vm.tools.arrowAnnotate"
+                    wv-orientation-marker-viewport-tool>
+                    <!--
+                    Overlay
+                    -->
+                    <wv-overlay ng-if="vm.tools.overlay" wv-study-id="$pane.series.studyId"
+                        wv-tags="$image.instanceInfos.TagsSubset" wv-viewport="$pane.csViewport" wv-image="$image">
+                    </wv-overlay>
+
+                    <!--
+                    Timeline.
+
+                    Always show the timeline — even if there is only
+                    one image — until we develop a specific component
+                    to display the image quality
+                    -->
+                    <div class="wv-overlay-timeline-wrapper wvPrintExclude">
+                        <wv-timeline wv-series="$pane.series" wv-readonly="vm.readonly"
+                            wv-reduce-timeline-height-on-single-frame-series="vm.reduceTimelineHeightOnSingleFrameSeries">
+                        </wv-timeline>
+                    </div>
+                </wv-viewport>
+
+                <!--
+                Notice: droppable zone
+                -->
+                <wv-pane-overlay ng-if="
+                        !$pane.videoId &&
+                        !$pane.seriesId &&
+                        !$pane.reportId
+                    "></wv-pane-overlay>
+            </wv-pane-policy>
+        </wv-splitpane>
+        <button class="closePrintButton" ng-click="vm.cancelPrintMode()"><span class="fa fa-times"></span></button>
+    </wv-layout-main>
+
+</wv-layout>
