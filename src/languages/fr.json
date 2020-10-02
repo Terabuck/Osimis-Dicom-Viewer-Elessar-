@@ -6,7 +6,7 @@
         "RESET": "réinitialiser"
     },
     "GENERAL_PARAGRAPHS": {
-        "NOTICE": "Faites pivoter votre appareil pour afficher des options supplémentaires.",
+        "NOTICE": "Faites pivoter votre appareil pour afficher le rapport d'étude et appuyez sur la barre noire pour afficher des séries supplémentaires",
         "DISCLAIMER_PARAGRAPH": "Ne pas utiliser pour un diagnostique.",
         "SCREEN_TOO_SMALL": "Votre écran est trop petit pour utiliser le viewer.",
         "INCOMPATIBLE_BROWSER": "Votre navigateur n'est pas supporté.  Le comportement du viewer sera altéré. Utilisez un autre navigateur si vous voulez émettre un diagnostique.",
@@ -19,7 +19,7 @@
         "PATIENTS": "patients",
         "SERIES": "séries",
         "REPORT": "rapport",
-        "REPORTS": "reports",
+        "REPORTS": "rapports",
         "STUDY": "étude",
         "STUDIES": "études"
     },
@@ -32,6 +32,55 @@
         "OVERLAY": {
             "IMAGE_LOADING_PARAGRAPH": "image {{ loadingImage }} en chargement, image {{ loadedImage }} affichée"
         },
+        "PDFVIEWER": {
+            "ACTUAL_SIZE": "Taille réelle",
+            "ATTACHMENTS": "Pièces jointes",
+            "AUTHOR": "Auteur:",
+            "AUTOMATIC_ZOOM": "Zoom automatique",
+            "CANCEL": "Annuler",
+            "CLOSE": "Fermer",
+            "CREATION_DATE": "Date de creation:",
+            "CREATOR": "Créateur:",
+            "CURRENT_VIEW": "Vue actuelle",
+            "DOCUMENT_OUTLINE": "Plan du document",
+            "DOCUMENT_PROPERTIES": "Propriétés du document ...",
+            "DOWNLOAD": "Télécharger",
+            "ENABLE_HAND_TOOL": "Activer l'outil manuel",
+            "ENTER_THE_PASSWORD_TO_OPEN_THIS_PDF_FILE": "Entrez le mot de passe pour ouvrir ce fichier PDF:",
+            "FILE_NAME": "Nom de fichier:",
+            "FILE_SIZE": "Taille du fichier:",
+            "FIND": "Trouver",
+            "FIT_PAGE": "Remplir la page",
+            "FULL_WIDTH": "Pleine largeur",
+            "GO_TO_FIRST_PAGE": "Aller à la première page",
+            "GO_TO_LAST_PAGE": "Aller à la dernière page",
+            "HIGHLIGHT_ALL": "Tout mettre en évidence",
+            "KEYWORDS": "Mots-clés:",
+            "LESS_INFORMATION": "Moins d'informations",
+            "MATCH_CASE": "Cas de correspondance",
+            "MODIFICATION_DATE": "Date de modification:",
+            "MORE_INFORMATION": "Plus d'informations",
+            "NEXT": "Suivant",
+            "OK": "D'accord",
+            "OPEN": "Ouvert",
+            "PAGE_COUNT": "Pages totales:",
+            "PAGE": "Page:",
+            "PDF_PRODUCER": "Producteur PDF:",
+            "PDF_VERSION": "Version PDF:",
+            "PREPARING_DOCUMENT_FOR_PRINTING": "Préparation du document pour l'impression ...",
+            "PRESENTATION_MODE": "Mode de présentation",
+            "PREVIOUS": "Précédent",
+            "PRINT": "Impression",
+            "ROTATE_CLOCKWISE": "Tourner à droite",
+            "ROTATE_COUNTERCLOCKWISE": "Tourner à gauche",
+            "SUBJECT": "Thème:",
+            "THUMBNAILS": "Miniatures",
+            "TITLE": "Titre:",
+            "TOGGLE_SIDEBAR": "Basculer la barre latérale",
+            "TOOLS": "Outils",
+            "ZOOM_IN": "Agrandir",
+            "ZOOM_OUT": "Dézoomer"
+        },
         "SERIES_LIST": {
             "NO_REPORT_AVAILABLE_PARAGRAPH": "Pas de rapport disponible",
             "NOTICE_PARAGRAPH": "Choisissez une ou plusieurs séries en cliquant dessus.",
@@ -42,7 +91,7 @@
             "VIDEO_LABEL_PARAGRAPH": "Vidéo: {{videoDescription || 'Vidéo sans titre'}}"
         },
         "SPLIT_PANE": {
-            "EMPTY_PANE_OVERLAY_PARAGRAPH": "déposez une série ici"
+            "EMPTY_PANE_OVERLAY_PARAGRAPH": "Veuillez déposer une série ici"
         },
         "SPLIT_PANE_OVERLAY": {
             "WW_WC": "ww/wc",
@@ -60,12 +109,14 @@
             "OF": "sur",
             "PAUSED": "pause",
             "PREVIOUS": "précédent",
-            "PLAY": "lancer"
+            "PLAY": "lancer",
+            "PLAY_REVERSE": "lire à l'envers"
         },
         "TOOLBOX": {
-            "SIMPLE_ANGLE_MEASUREMENT": "mesure d’angle entre lignes",
             "ANGLE_MEASUREMENT": "mesure d’angle",
+            "SIMPLE_ANGLE_MEASUREMENT": "mesure d’angle entre lignes",
             "ARROW_ANNOTATE_TEXT": "annoter l’image avec du texte",
+            "CROSS_HAIR": "réticule 3D",
             "DOWNLOAD_AS_JPEG": "télécharger en jpeg",
             "ELLIPTICAL_ROI": "roi élliptique",
             "FLIP_HORIZONTALLY": "retournement horizontal",
@@ -74,24 +125,24 @@
             "KEY_IMAGE_NOTE_LEGEND": "Créer une image avec les annotations pour le viewport sélectionné.",
             "LENGTH_MEASUREMENT": "mesure de taille",
             "PANNING": "déplacer",
-            "PIXEL_PROBE": "pixel probe",
+            "PIXEL_PROBE": "sonde pixel",
             "PREVIOUS_SERIES": "série précédente",
             "PRINT": "imprimer",
             "MAGNIFYING_GLASS_CONFIG_LEGEND": "cliquer sur le bouton pour utiliser la loupe. Vous pouvez configurez les paramètres.",
             "MAGNIFYING_GLASS_LEVEL": "niveau de grossissement",
             "MAGNIFYING_GLASS_SIZE": "taille du grossissement",
             "NEXT_SERIES": "série suivante",
-            "RECTANGLE_ROI": "roi rectangulaire",
+            "RECTANGLE_ROI": "ROI rectangulaire",
+            "REFERENCE_LINES": "lignes de référence",
             "ROTATE_LEFT": "rotation sur la gauche",
             "ROTATE_RIGHT": "rotation sur la droite",
             "SPLIT_PANE_CONFIG_LEGEND_PARAGRAPH": "Changer la mise en page des viewports.",
-            "SYNCHRONIZED_BROWSING" : "Navigation syncrhonisée",
-            "TOGGLE_LAYOUT_TEXT" : "Annotations textuelles",
-            "TOGGLE_LAYOUT_ICONS" : "Annotations visuelles",
+            "SYNCHRONIZED_BROWSING": "Navigation syncrhonisée",
+            "TOGGLE_LAYOUT_TEXT": "Annotations textuelles",
+            "TOGGLE_LAYOUT_ICONS": "Annotations visuelles",
             "COMBINED_TOOL": "outil multiple",
             "WINDOWING_PRESET_LEGEND": "cliquer sur le bouton pour utiliser l’outil de windowing ou appliquer un preset pour le viewport sélectionné.",
             "ZOOM": "zoom"
         }
     }
 }
-

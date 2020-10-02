@@ -1701,7 +1701,7 @@ html[dir="rtl"] .pdfjs #documentPropertiesOverlay .row > * {
 .pdfjs .visibleSmallView {
     display: none;
 }
-@media all and (max-width: 960px) {
+@media all and (max-width: 1360px) {
     html[dir="ltr"] .pdfjs #outerContainer.sidebarMoving .outerCenter,
     html[dir="ltr"] .pdfjs #outerContainer.sidebarOpen .outerCenter {
         float: left;
@@ -1713,7 +1713,7 @@ html[dir="rtl"] .pdfjs #documentPropertiesOverlay .row > * {
         right: 205px;
     }
 }
-@media all and (max-width: 900px) {
+@media all and (max-width: 1260px) {
     .pdfjs .sidebarOpen .hiddenLargeView {
         display: none;
     }
@@ -1721,7 +1721,7 @@ html[dir="rtl"] .pdfjs #documentPropertiesOverlay .row > * {
         display: inherit;
     }
 }
-@media all and (max-width: 860px) {
+@media all and (max-width: 1160px) {
     .pdfjs .sidebarOpen .hiddenMediumView {
         display: none;
     }
@@ -1729,7 +1729,7 @@ html[dir="rtl"] .pdfjs #documentPropertiesOverlay .row > * {
         display: inherit;
     }
 }
-@media all and (max-width: 770px) {
+@media all and (max-width: 1060px) {
     .pdfjs #sidebarContainer {
         top: 32px;
         z-index: 100;
@@ -1764,7 +1764,7 @@ html[dir="rtl"] .pdfjs #documentPropertiesOverlay .row > * {
         display: none;
     }
 }
-@media all and (max-width: 700px) {
+@media all and (max-width: 900px) {
     .pdfjs #outerContainer .hiddenLargeView {
         display: none;
     }
@@ -1772,7 +1772,7 @@ html[dir="rtl"] .pdfjs #documentPropertiesOverlay .row > * {
         display: inherit;
     }
 }
-@media all and (max-width: 660px) {
+@media all and (max-width: 860px) {
     .pdfjs #outerContainer .hiddenMediumView {
         display: none;
     }
@@ -1780,7 +1780,7 @@ html[dir="rtl"] .pdfjs #documentPropertiesOverlay .row > * {
         display: inherit;
     }
 }
-@media all and (max-width: 600px) {
+@media all and (max-width: 800px) {
     .pdfjs .hiddenSmallView {
         display: none;
     }
@@ -1801,7 +1801,7 @@ html[dir="rtl"] .pdfjs #documentPropertiesOverlay .row > * {
         width: 0;
     }
 }
-@media all and (max-width: 510px) {
+@media all and (max-width: 700px) {
     .pdfjs #scaleSelectContainer,
     .pdfjs #pageNumberLabel {
         display: none;
