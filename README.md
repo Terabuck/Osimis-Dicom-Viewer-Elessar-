@@ -11,6 +11,14 @@ This "tuning" is entirely based on the original Osimis Dicom Viewr that can be f
 
 Motivated to avoid the visual stress of high contrast of black and blue, the interface matches the colors of the Orthanc Explorer Elessar mode available at https://github.com/Terabuck/Elessar
 
+Following Pascal Precht Angular Translate scheme, the updated locales for the Osimis WebViewer are includded.
+
+Some minors adjustments were made to the scss just to avoid some fields overlapping of the PDF menu bar when used in small screens.
+
+This is the aspect on a Nexus 6
+![PDF_Sample](/samples/Nexus6-PDF-Spanish.png)
+Format: ![PDF_Osimis_Spanish](url)
+
 Examples (Anonymized):
 
 Chest xRay (COVID-19): https://misimagenes.online/ym166
