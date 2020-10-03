@@ -21,9 +21,12 @@
             en: 'english',
             fr: 'français',
             nl: 'nederlands',
-            pt: 'Português',
-            es: 'Español',
-            zh: 'Chinese'
+            pt: 'português',
+            es: 'español',
+            jp: 'japanese',
+            gr: 'german',
+            it: 'italian',
+            zh: 'chinese'
         };
         // languages Key array, automatically populated set with languages object
         var keysArray = [];
