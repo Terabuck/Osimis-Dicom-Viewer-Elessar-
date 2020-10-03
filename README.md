@@ -15,7 +15,7 @@ Following Pascal Precht Angular Translate scheme, the updated locales for the Os
 
 Some minors adjustments were made to the scss just to avoid some fields overlapping of the PDF menu bar when used in small screens.
 
-This is the aspect on a Nexus 6
+This is the aspect on of the viewer on a Nexus 6
 ![PDF_Sample](/samples/Nexus6-PDF-Spanish.png)
 
 Examples (Anonymized):
