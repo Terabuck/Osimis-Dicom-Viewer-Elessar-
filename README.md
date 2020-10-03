@@ -18,6 +18,19 @@ Some minors adjustments were made to the scss just to avoid some fields overlapp
 This is the aspect on of the viewer on a Nexus 6
 ![PDF_Sample](/samples/Nexus6-PDF-Spanish.png)
 
+Available languages:
+
+French
+Spanish
+Portuguese
+Chinese
+Dutch
+German
+Japanese
+Italian
+English (default)
+
+
 Examples (Anonymized):
 
 Chest xRay (COVID-19): https://misimagenes.online/ym166
