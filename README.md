@@ -20,15 +20,7 @@ This is the aspect on of the viewer on a Nexus 6
 
 Available languages:
 
-French
-Spanish
-Portuguese
-Chinese
-Dutch
-German
-Japanese
-Italian
-English (default)
+French, Spanish, Portuguese, Chinese, Dutch, German, Japanese, Italian and English (default)
 
 
 Examples (Anonymized):
