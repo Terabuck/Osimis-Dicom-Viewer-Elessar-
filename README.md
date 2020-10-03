@@ -17,7 +17,6 @@ Some minors adjustments were made to the scss just to avoid some fields overlapp
 
 This is the aspect on a Nexus 6
 ![PDF_Sample](/samples/Nexus6-PDF-Spanish.png)
-Format: ![PDF_Osimis_Spanish](url)
 
 Examples (Anonymized):
 
