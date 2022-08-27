@@ -1,4 +1,4 @@
-# Osimis-Dicom-Viewer-Elessar-
+# Osimis Dicom Viewer - Elessar (Green) Skin
 
 Osimis Dicom Viewer, forked and tuned (green and grey). 
 QR &amp; Social Share snippets. 
