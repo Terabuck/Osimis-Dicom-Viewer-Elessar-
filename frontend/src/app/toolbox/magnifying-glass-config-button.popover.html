@@ -1,0 +1,44 @@
+<div class="popover wvToolbar__windowingPresetConfigPopover">
+    <div class="arrow"></div>
+    <div class="popover-content">
+        <form name="popoverForm">
+            <!--
+            Notice
+            -->
+            <p class="wvToolbar__windowingPresetConfigNotice">
+                {{ "COMPONENTS.TOOLBOX.MAGNIFYING_GLASS_CONFIG_LEGEND" | translate }}
+            </p>
+
+            <!--
+            @todo use play tool style
+            -->
+            <!--
+            Range Input: Magnification Level
+            -->
+            <label for="magLevelRange">{{ "COMPONENTS.TOOLBOX.MAGNIFYING_GLASS_LEVEL" | translate }}</label>
+            <input
+                type="range"
+                ng-model="vm.magnificationLevel"
+                min="1.5"
+                max="10"
+                step="0.5"
+            />
+            {{vm.magnificationLevel}}x
+
+            <br/>
+
+            <!--
+            Range Input: Magnifying Glass Size
+            -->
+            <label for="magSizeRange">{{ "COMPONENTS.TOOLBOX.MAGNIFYING_GLASS_SIZE" | translate }}</label>
+            <input
+                type="range"
+                ng-model="vm.magnifyingGlassSize"
+                min="50"
+                max="500"
+                step="25"
+            />
+            {{vm.magnifyingGlassSize}}px / {{vm.magnifyingGlassSize}}px
+        </form>
+    </div>
+</div>

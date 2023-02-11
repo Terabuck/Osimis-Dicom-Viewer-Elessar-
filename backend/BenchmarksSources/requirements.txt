@@ -1,0 +1,2 @@
+-e git+ssh://git@bitbucket.org/osimis/pythontoolbox.git@1.9.0#egg=pythonToolbox
+

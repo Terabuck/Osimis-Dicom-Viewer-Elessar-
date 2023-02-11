@@ -1,0 +1,14 @@
+{
+  "name": "cornerstoneMath",
+  "homepage": "https://github.com/chafey/cornerstoneMath",
+  "version": "0.1.6",
+  "_release": "0.1.6",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.6",
+    "commit": "8cfc5b42cd40f9c337c9d5e6c29a8ca5f021d31a"
+  },
+  "_source": "https://github.com/chafey/cornerstoneMath.git",
+  "_target": "0.1.6",
+  "_originalSource": "cornerstoneMath"
+}

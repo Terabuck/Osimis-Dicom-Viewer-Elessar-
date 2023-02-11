@@ -1,0 +1,26 @@
+{
+  "name": "osisync",
+  "version": "1.0.5",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "bin": {
+    "osisync": "bin/cli.js"
+  },
+  "preferGlobal": "true",
+  "dependencies": {
+    "chalk": "^1.1.1",
+    "cheerio": "^0.20.0",
+    "glob": "^6.0.4",
+    "gulp-util": "^3.0.7",
+    "lodash": "^4.3.0",
+    "portastic": "^1.0.1",
+    "q": "^1.4.1",
+    "through2": "^2.0.1",
+    "yargs": "^3.32.0"
+  }
+}

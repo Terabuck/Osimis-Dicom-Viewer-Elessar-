@@ -1,0 +1,219 @@
+.wvToolbar {
+    position: absolute;
+}
+.wvToolbar--top {
+    top: 0;
+    height: $toolbarHeight;
+    right: 0;
+    text-align: right;
+    white-space: nowrap;
+    max-width: 100%;
+    display: contents;
+}
+.wvToolbar--right {
+    right: 0;
+    width: $toolbarHeight;
+    height: 100%;
+    z-index: 2;
+    &.wvToolbar--big {
+        width: 68px;
+    }
+}
+.wvToolbar__splitpaneConfigPopover {
+    font-size: 0;
+}
+.wvToolbar__splitpaneConfigNotice {
+    font-size: 1.25rem;
+    font-style: italic;
+    text-align: center;
+    color: #333;
+}
+input[type="radio"].wvToolbar__splitpaneConfigButtonInput {
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 0;
+    top: 0;
+    bottom: 2px;
+    right: 0;
+    opacity: 0;
+}
+.wvToolbar__windowingPresetConfigPopover {
+}
+.wvToolbar__windowingPresetConfigNotice {
+    font-size: 1.25rem;
+    font-style: italic;
+    text-align: center;
+    color: #333;
+}
+.wvToolbar__windowingPresetList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+}
+.wvToolbar__windowingPresetListItem {
+    &:hover {
+        text-decoration: none;
+        color: white;
+    }
+    outline: none;
+    background-color: transparent;
+    border: 0;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    font-variant: small-caps;
+    text-transform: lowercase;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 2.2rem;
+    color: hsl(0, 0%, 85%);
+    transition: 0.3s text-decoration ease, 0.3s border ease, 0.3s opacity ease;
+    margin: 0;
+    min-width: 3rem;
+    padding: 0 10px;
+    line-height: 3.6rem;
+    max-height: 2.8rem;
+    max-width: 100%;
+    overflow: hidden;
+    margin: 0.6rem;
+    margin-left: 0;
+    margin-right: 0;
+    & + & {
+        margin-left: 0.7rem;
+    }
+    line-height: 2rem;
+    padding-top: 0.1rem;
+    padding-bottom: 0.5rem;
+    font-size: 1.4rem;
+    border: 1px solid hsl(0, 0%, 27%);
+    font-family: Arial;
+    background-color: hsl(0, 0%, 0%);
+    &:hover {
+        background-color: hsl(0, 0%, 10%);
+    }
+    & > .glyphicon {
+        position: relative;
+        display: inline-block;
+        top: 3px;
+        margin-right: 4px;
+    }
+    color: hsl(0, 0%, 10%);
+    border: 1px solid hsl(0, 0%, 73%);
+    background-color: hsl(0, 0%, 100%);
+    &:hover {
+        color: hsl(0, 0%, 10%);
+        background-color: hsl(0, 0%, 90%);
+    }
+    width: 100%;
+    margin: 0;
+    margin-left: 0 !important;
+    border-top: 0;
+    border-bottom: 0;
+}
+.wvToolbox {
+    margin: 2px 1px;;
+    max-width: 100%;
+    z-index: -1;
+    border: 1px solid #007b36;
+    background-color: #494a48;;
+    padding: 2px;
+}
+.wvCustomTools {
+    *,
+    *::before,
+    *::after {}
+
+    display:inline;
+
+    .dialog-title {
+        margin-top: 7px;
+        margin-bottom: 1px;
+        padding-bottom: 9px;
+        padding-left: 4px;
+        font-size: 1.3rem;
+        margin-right: -3px
+    }
+
+    .hidden {
+        display: none
+    }
+
+    .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #929796;
+        text-align: center;
+        padding: .5rem 0;
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.1;
+        border: 1px solid #ddd;
+        cursor: pointer;
+        background-color: #f9f9f9
+    }
+
+    .button:hover {
+        border-color: #cdd
+    }
+
+    .qr-dialog {
+        margin-top: .3rem;
+        display: none;
+        max-width: 100%;
+        z-index: -1;
+        border: 1px solid #007b36;
+        background-color: #494a48
+    }
+
+    .qr-dialog.is-open {
+        display: block;
+        z-index: 2
+    }
+
+    .qr-close-button {
+        background-color: transparent;
+        border: none;
+        width: 3rem;
+        height: 3rem;
+        padding: 3px;
+        float: right
+    }
+
+    .share-dialog {
+        margin-top: .3rem;
+        display: none;
+        max-width: 100%;
+        z-index: -1;
+        border: 1px solid #007b36;
+        background-color: #494a48
+    }
+
+    .share-dialog.is-open {
+        display: block;
+        z-index: 2
+    }
+
+    .targets {
+        display: contents;
+        margin: .5rem
+    }
+
+    .share-icon {
+        max-width: 3rem;
+        margin: .3rem
+    }
+
+    .close-button {
+        background-color: transparent;
+        border: none;
+        width: 3rem;
+        height: 3rem;
+        padding: 3px;
+        float: right
+    }
+
+}

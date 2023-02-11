@@ -1,0 +1,7 @@
+
+> buffertools@2.1.6 install /home/ludwig/orthanc/osimis-webviewer-plugin/frontend/node_modules/buffertools
+> node-gyp rebuild
+make: Entering directory '/home/ludwig/orthanc/osimis-webviewer-plugin/frontend/node_modules/buffertools/build'
+CXX(target) Release/obj.target/buffertools/buffertools.o
+buffertools.target.mk:109: recipe for target 'Release/obj.target/buffertools/buffertools.o' failed
+make: Leaving directory '/home/ludwig/orthanc/osimis-webviewer-plugin/frontend/node_modules/buffertools/build'

@@ -1,0 +1,541 @@
+Note: this project is in reduced maintenance mode.  You should swith to the new Stone Web Viewer.
+
+Version 1.4.2
+========================
+
+Fixes:
+-----
+
+* LSD-479: cont: fix thumbnails that are too small.
+
+
+Version 1.4.1
+========================
+
+Fixes:
+-----
+
+* LSD-479: when a series contain images with multiple resolutions, we should use a different zoom
+           level for each resolution.
+* PRO-370: info popup always appears at startup (cookie not working)
+* PRO-357: can't display studies with spaces in SeriesNumber and InstanceNumber
+
+Version 1.4.0
+========================
+
+Changes:
+-------
+
+* Removed the "Not for diagnostic usage" disclaimer message.  The option "AlwaysShowNotForDiagnosticUsageDisclaimer" allows you to re-enable it.
+* Added an info popup that displays the Osimis logo, the orthanc and viewer versions, a link to a documentation and a "Not for diagnostic usage" information.
+  The option "ShowInfoPopupAtStartup" allows you to define when it should be displayed ("always", "never", "user")
+  The option "ShowInfoPopupButtonEnabled" allows you to include a button to display that popup at any-time
+* Added a "DocumentationUrl" to provide your custom version of the documentation
+* Added support for spanish translations (es)
+* GdcmEnabled is now false by default if the plugin is started in Orthanc 1.7.0 (we assume that the new GDCM plugin is enabled)
+
+Fixes:
+-----
+
+* fix automatic windowing of files without windowing tags and RescaleSlope != 1
+* include window.location.search arguments in study download link
+* fix IE11 not forwarding auth-token from window.location.search to authorization plugin
+* fix "black image" when printing from Safari 13.1
+
+Version 1.3.1
+========================
+
+Changes:
+-------
+
+* The study breadcrumb has been removed to avoid wrong patient/study identification when displaying multiple patient/studies in the same viewer
+* Now displaying the PatientBirthDate and PatientSex in the top left overlay below PatientName and PatientID.
+  Note that, the PatientSex being cached in metadata (InstanceInfoCacheEnabled), this cache will be regenerated, this might slow down the loading of old studies.
+* Now displaying the InstanceNumber in the bottom left overlay
+* Changed the dynamic of the windowing tool:
+  - in the first 50 pixels: moving by 1 pixel changes the WW/WC value by 1
+  - then, the WW/WC increments varies with the distance from the start of the movement
+  This allows for fine tuning the WW/WC and also handling large values.
+* Changed the default behaviour of the mouse wheel: going down will move to the next image in the series
+* The format of dates can now be configured in a "DateFormat" configuration.  The default is the DICOM format "YYYYMMDD" as before.
+* When images of a series each contain a different windowCenter/windowWidth, the individual windowCenter/windowWidth is applied until the user modifies the windowing
+  himself.  Once this is done, these settings are applied to all instances.
+* Default windowing presets have changed (WVB-402).
+
+Fixes:
+-----
+
+* Fix loading of /osimis-viewer/images/{id}/0/8bit/invert-monochrome1/jpeg:100 for US instances when ShortTermCache was enabled
+* Synchronized browsing is now disabled when the tool is deactivated by setting SynchronizedBrowsingEnabled=false
+* Reference lines are now disabled when the tool is deactivated by setting ReferenceLinesEnabled=false
+* WVB-400: slice-ordering & incomplete series:
+           - now invalidating the cache (InstanceInfoCacheEnabled) if it does not contain the right number of instances info
+           - ordering the slices per ImagePositionPatient first and, if not possible, by ImageNumber
+           - slices ordered by ImagePositionPatient are now displayed in the usual order (top of body as the first slide)
+
+
+Version 1.3.0
+========================
+
+=> Minimum Orthanc version: 1.3.1 <=
+=> Recommended Orthanc version: latest release (1.5.7+) <=
+
+New features:
+------------
+
+* 3-D Cross-Hair
+* Added a button to download the current viewport as jpeg.  It must be enabled by setting the "DownloadAsJpegEnabled" option
+  to true in the configuration file.  The exported image is identical to the one being displayed in the viewport (including annotations,
+  windowing, rotation, ...).  Note that, on Chrome, the exported image has the same resolution as the original DICOM image while, in Firefox,
+  the exported image size is limited to 1M pixels.
+
+Changes:
+-------
+
+* Instead of showing the StudyDate, the overlay now displayes SeriesDate - SeriesTime.  If there are no SeriesDate and SeriesTime, the overlay
+  shows StudyDate - StudyTime.
+  Note that this has an impact on the instance info that have been cached (check the "InstanceInfoCacheEnabled" entry in the configuration file);
+  these information will be invalidated and will need to be recomputed next time you open a study.  This might slow down re-opening time of older studies.
+* By default, the GDCM library is now only used for JPEG2000 decompression while the default decoder is used for all other Transfer Syntaxes.
+  This speeds up decoding of i.e. multiframe MG series.
+* Query arguments (i.e ?token=1234) are passed as HTTP Headers of every request that is sent to Orthanc easing the integration with the orthanc-authorization
+  plugin
+* You can now specify the language through a query argument (i.e. ?language=en)
+* Added Chinese translations (zh)
+* Added 3 configurations to enable/disable tools: SynchronizedBrowsingEnabled, ReferenceLinesEnabled, CrossHairEnabled (all true by default)
+
+
+Improvements:
+------------
+* SEG files are ignored since they can not be displayed anyway.
+* Added an option to ignore series based on metadata values.  This is defined in the configuration file in "SeriesToIgnoreFromMetadata".
+* It is now possible to define the display order of series by providing the list of series id in the "seriesDisplayOrder" metadata.  If the metadata
+  is not defined, the series are now displayed according to the SeriesNumber and then, the alphabetical order of their series id
+  (in past version, the order was the one provided by Orthanc and could depend on the order of object creation in Orthanc)
+* The synchronized browsing is now active when displaying twice the same series
+* The windowing tool is now applied only to the current viewport.
+* Integration with Orthanc Explorer: if ?token=1234 is passed when opening the Orthanc Explorer, it will also open the viewer with that url search params.
+  (This will work only from Orthanc 1.5.8)
+
+Fixes:
+-----
+
+* WVP-161: Sync browsing doesn't work if the same series is displayed in two viewports
+
+
+API Changes:
+-----------
+* there's a new route (GET) to /osimis-viewer/studies/{studyId}
+* Annotations now have an additional 'uuid' field
+* It's now possible to specify multiple study ids in the url parameters: index.html?pickableStudyIds={id1},{id2},{id3}&selectedStudyIds={id1},{id3}
+
+
+Known Issues:
+------------
+* CBCT slices might not be displayed in the correct order.  This is fixed by upgrading your Orthanc to version 1.4.2 or later.
+* if a series contains one instance without position or IndexInSeries, the whole series is not displayed.  This is fixed by upgrading
+  your Orthanc to version 1.5.7 or later.
+* WVB-285: Some multiframe US do not play at the right speed (46Hz).  Workaround: reduce the playback speed to 10Hz max.
+* WVB-309: Video player might be cropped if the browser window is very wide.  Workaround: resize the browser window
+* WVB-344: When the cache is enabled, some rgb48 images won't display.
+* WVB-349: Usability: when clicking a viewport to flip/rotate it while a measure tool is selected will create a measure.
+* WVB-383: In the study picker, the studies order is undefined
+* WVB-384: The WebViewer currently does not work on iPhone (Safari and Chrome).
+* WVB-387: X-Ray Radiofluoroscopic Image Storage (multi-frames) are very slow to load
+* WVB-389: YBR_FULL_422 multiframe US can not be visualized
+
+* WVP-125: Some image orientation markers may be hidden behind the loading bar.  Workaround: resize the browser window
+* WVP-136: Some measurement tool stays active when not finished
+* WVP-163: With IE11, the application may freeze while auto-playing multiple synchronized series
+* WVP-167: Some annotations / measurements disappear when saving the image as JPEG
+
+
+Version 1.2.0
+========================
+
+=> Minimum Orthanc version: 1.3.1 <=
+
+New features:
+------------
+
+* Now displaying reference lines to show the intersection of images in different planes
+* Added print support (not supported on Internet Explorer).  The feature can be enabled/disabled through the "PrintEnabled"
+  option (true by default).  Note that, due to conflicts, we had to remove print support for pdf instances.  If you need
+  to print pdf instances, download the file and print it from your pdf viewer.
+* Added a "custom command" button whose action can be customized through LuaScript.  This is defined in the configuration file
+  in "CustomCommandEnabled", ...
+* Added an option to ignore series based on tags values.  This is defined in the configuration file in "SeriesToIgnore".
+
+Improvements:
+------------
+* Whatever the current selected tool, the middle mouse button can be used to pan the image and
+  the right mouse button can be used to zoom in the image.
+* The windowing tool is now the default tool (unless specified in the configuration file in "DefaultSelectedTool").  Given the
+  new middle and right mouse button functions, you now have the 3 most common tools directly available by default.
+* When displaying multiple studies, the colors of the study island is now repeated around the viewports
+* Saving some UI state in the browser local storage to re-open the viewer with the same settings (Study island display mode,
+  layout and overlay texts)
+* Added an option to configure the loading of all patient studies or a single study ("OpenAllPatientStudies" - true by default)
+* Improved the loading of various quality levels: load lowest-quality only if image is larger than 750x750.
+* Improved detection of Patient Orientation to allow synchronization of series (now accepting 10° max between orientations)
+* Slightly optimized the loading of series when "InstanceInfoCacheEnabled" is set to "true"
+
+Fixes:
+-----
+* Improved support for some US modalities providing Columns/Rows tags as "600\\0" instead of "600"
+* Key image captures are now reduced in size to max 1M pixels.  Larger images were not supported on many browsers.
+* WVB-378: Secondary capture images are invalid and can not be pushed to other DICOM modalities
+* WVB-280: YBR - JPEG lossy compressed high quality images are not displayed
+* WVB-371: It is impossible to edit a text annotation
+* WVB-376: US images encoded in YBR are not displayed correctly
+* WVB-364: On touch-screens, tooltips stays visible
+* WVB-370: US images whose transfer syntax is JPEG are not displayed correctly
+* WVB-372: MR Breast file can not be visualized
+
+API Changes:
+-----------
+* there's a new route (POST) to /osimis-viewer/custom-command/{instanceId}
+
+
+Known issues:
+------------
+* The WebViewer currently does not work on iPhone (Safari and Chrome).
+* CBCT slices might not be displayed in the correct order.  This is fixed by upgrading your Orthanc to version 1.4.2 or later.
+* WVB-383: In the study picker, the studies order is undefined
+
+
+Version 1.1.2
+========================
+
+Fixes:
+-----
+* Only the build process has been updated.  The viewer behaves the same way as 1.1.1
+
+
+Version 1.1.1
+========================
+
+=> Minimum Orthanc version: 1.3.1 <=
+
+Fixes:
+-----
+* There was a conflict between Orthanc WebViewer cache and Osimis WebViewer cache.
+  The ShortTermCache is now disabled by default and its default location is now OsimisWebViewerCache instead of WebViewerCache.
+
+
+Version 1.1.0
+========================
+
+=> Minimum Orthanc version: 1.3.1 <=
+
+Features:
+--------
+* All annotations are now editable when any annotation tool is selected
+* Added new real angle tool (there are now 2 angle tools: simple angle and lines angle)
+* Added synchronized browsing
+* Added options to configure the keyboard shortcuts ("KeyboardShortcuts" + "KeyboardShortcutsEnabled")
+* Added a combined tool that can handle 3 tools on mouse and/or touch gestures ("CombinedToolBehaviour")
+* Added an option to configure the mouse behaviour for the windowing tool ("WindowingBehaviour")
+* Added an option to preload high quality images on the frontend before the user needs them.
+* Added orientation markers
+* Added arrow+text annotations
+* Added key image capture to store snapshots with annotation
+* Windows presets can be configured in configuration file
+* Added a "Not for diagnostic usage" disclaimer since this viewer is not CE marked or FDA approved
+* Added options to configure the viewer UI:
+  "StudyDownloadEnabled", "VideoDisplayEnabled", "AnnotationStorageEnabled",
+  "KeyImageCaptureEnabled", "ShowStudyInformationBreadcrumb",
+  "ShowNoReportIconInSeriesList", "ReduceTimelineHeightOnSingleFrameSeries",
+  "ToolbarLayoutMode", "ToolbarButtonSize", "WindowingPresets",
+  "DefaultSelectedTool", "DefaultStudyIslandsDisplayMode",
+  "DefaultLanguage"
+* Added a one-column display mode for the study island
+* Added internationalization support (en-fr)
+* Added a tool to show/hide overlay text/icons
+* Added a loading spinner
+* WVP-139: added ability to play series in both directions
+
+
+Fixes:
+-----
+* Scrolling with wheel mouse: when reaching the end of a series, go back to the other end (this worked only in one direction)
+* Magnifying glass not always on top of image
+* WVB-312 + WVB-120: Wrong measurements in US and XA
+* WVB-330: WW/WL not working in IE 11
+* WVB-326: support for RGB48 images
+* WVB-293: support for YBR422 images
+* WVB-341: WindowingPresets are not visible
+* VS-192: ShortTermCache: invalidate instances when instance is received in case it is a 'resend' of an instance with modification (i.e. same image is uploaded again with rotation/flip)
+* WVP-142: Windowing: Ignore slope/intercept if PhotometricInterpretation is RGB
+
+
+Improvements:
+------------
+* speed-up initial study/series loading time.
+
+
+Experimental features:
+---------------------
+* Added a short term cache to store low/high quality images in the backend.
+  To enable it, check the "ShortTermCache..." configurations.
+* Added prefetching on the backend to pre-compute low/high quality images
+  before the frontend requests them.  To enable it, check the
+  "ShortTermCachePrefetchOnInstanceStored" configuration.
+* Added the ability to display custom icons in overlay
+
+
+Known issues:
+------------
+* The WebViewer currently does not work on iPhone (Safari and Chrome).
+* WVB-370: US images whose transfer syntax is JPEG are not displayed correctly (this issue was already affecting earlier versions)
+
+Remarks:
+-------
+* internal API has changed, especially the osimis-viewer/series route.
+
+Version 1.0.2
+========================
+
+=> Minimum Orthanc version: 1.1.0 <=
+
+Fixes:
+-----
+* Annotation readback
+
+
+Version 1.0.1
+========================
+
+=> Minimum Orthanc version: 1.1.0 <=
+
+Fixes:
+* WVB-312: US and XA measures are invalid
+
+
+Version 1.0.0
+========================
+
+=> Minimum Orthanc version: 1.1.0 <=
+
+Features:
+* Zoom in the viewport using a magnifying glass.
+* Apply windowing preset.
+
+Version 0.9.1
+========================
+
+=> Minimum Orthanc version: 1.1.0 <=
+
+Features:
+* Added a route to retrieve resized/resampled/recompressed images (i.e:
+  osimis-viewer/images/<instance-uid>/<frame-id>/8bit/invert-monochrome1/jpeg:90
+  osimis-viewer/images/<instance-uid>/<frame-id>/resize:256/8bit/png
+
+Fixes:
+* Enhance default windowing algorithm.
+
+Version 0.9.0
+========================
+
+=> Minimum Orthanc version: 1.1.0 <=
+
+Features:
+* Compare the current study with other studies from the same patients.
+* Select a viewport and apply flip/rotate/color inversion tools to it.
+* Support for windows touchscreen.
+* Support 1x2 and 2x1 viewport grid layout.
+* Enhance overall interface:
+  - Display consulted series.
+  - Show the list of series as a grid.
+  - Display the selected viewport's study data in the top bar.
+  - ...
+
+Fixes:
+* Prevent double tooltip (text indicators for buttons) display.
+* Display studies containing incompatible series.
+* Use 3 fingers to change windowing instead of 2 on mobile.
+* Support for MONOCHROME1 photometric interpolation.
+* Enhance windowing tool ergonomy on images with high dynamic.
+* Support default windowing for compressed dicom images without windowing tags.
+* Parse DICOM instances whose `DICM` header at [128..131] does not exist.
+* Keep the same images' displayed zones when the window is resized.
+
+Breaking Changes:
+* New routes used:
+  - /<orthanc>/patients/<patient-uid>
+  - /<orthanc>/instances/<instance-uid>/study
+  - /<orthanc>/series/<instance-uid>/study
+* Internal calls to orthanc routes are now routed to other plugins.
+
+Version 0.8.0
+========================
+
+=> Minimum Orthanc version: 1.1.0 <=
+
+Features:
+* Watch MPEG-4 (non-bd) video embedded in DICOM instances.
+  Videos do not load on Mobile and Safari.
+
+Options:
+  - `VideoDisplayEnabled` option is now available in the orthanc config file.
+
+Breaking Changes:
+* New routes used:
+  - /<orthanc>/instances/<video-instance-uid>/frames/0/raw
+
+Version 0.7.0
+========================
+
+=> Minimum Orthanc version: 1.1.0 <=
+
+Features:
+* Store annotations in the backend (disabled by default)
+  - Warning: Annotations are overriden when multiple users edit annotations from
+  the same study at the same time.
+  - New parameter `AnnotationStorageEnabled` in the backend config file
+
+Fixes:
+* Prevent instances with lot of images to stuck the viewer
+
+Optimization:
+* Improved overall performance
+* Increase thumbnail image quality. Quality: from 80% to 100%. Resolution: from 150x150 to 300x300.
+
+Version 0.6.1
+========================
+
+=> Minimum Orthanc version: 1.1.0 <=
+
+* Docker Image: set Orthanc version to 1.2.0 and removed Authentication by default.
+
+Version 0.6.0
+========================
+
+=> Minimum Orthanc version: 1.1.0 <=
+
+Usability:
+* Enhance overall user interface
+  warning: the 2x1 and 1x2 grid mode have been removed for now
+* Change the shown thumbnail image from the first series' instance to the middle one
+* Set default tool to zoom instead of windowing
+* Provide tooltip helpers for the toolbar
+* Pinch to zoom on mobile
+* Move 3 fingers to change windowing on mobile
+* Optimise mobile display on portrait and landscape mode
+
+Features:
+* Display PDF embedded in DICOM instances
+
+Optimization:
+* Bypass images recompression when image is already compressed within DICOM
+
+Bug fixes:
+* Play series with Safari Mobile
+* Embed fonts instead of relying on CDN
+* Display precompressed instance images on mobile and EDGE
+* Display series in order
+* Fit images to the viewports
+* Keep viewport settings when browser's window is resized
+* Display zoom based on image's full resolution
+
+Breaking Changes:
+* `plugin-entrypoint.html` has been renamed to `index.html`
+* New parameter `StudyDownloadEnabled` in the backend config file
+* New routes used:
+  - /<orthanc>/instances/<instance-uid>/pdf
+  - /osimis-viewer/app/config.js
+  Have a look at the `/procedures/develop-auth-proxy.md` document.
+
+Version 0.5.5
+========================
+
+=> Minimum Orthanc version: 1.1.0 <=
+
+* Docker Image: Changed the orthanc.json included in the image.  By default, Orthanc is now accessible from outside the container ("RemoteAccessAllowed": true).
+* Fix crash in Chrome when displaying color JPEG images.
+
+Version 0.5.4
+========================
+
+=> Minimum Orthanc version: 1.1.0 <=
+
+* Docker Image: Updated Orthanc to 1.2.0
+
+Version 0.5.3
+========================
+
+=> Minimum Orthanc version: 1.1.0 <=
+
+* Optimize client code in release mode
+* Improve compatibility with DICOM SR
+* Fix orthanc crash on some bad http routes
+* Enhance progressive image loading algorithm:
+  - Always load thumbnail quality except on small already-compressed dicom
+* Reduce simplified-tags requests at study loading: load them during series loading
+* Fix preloader: reduce loading priority or cancel download on series/image switch
+* Improve Safari compatibility
+* Improve IE11+ compatibility
+
+Version 0.5.2
+========================
+
+=> Minimum Orthanc version: 1.1.0 <=
+
+* Enhance compatibility with reverse proxies
+* Remove memory leaks
+* Handle multiple-value DICOM tags for WindowWidth and WindowCenter: use the first value of each one
+
+Version 0.5.1
+========================
+
+=> Minimum Orthanc version: 1.1.0 <=
+
+* Adapt front-end versions
+* Remove the series id from overlay
+
+Version 0.5
+========================
+
+=> Minimum Orthanc version: 1.1.0 <=
+
+* Support of Safari
+* Move the play button to timelines
+* Provide play framerate configuration via a panel appearing when the mouse is
+  on top of the play button
+* Rename the JSON configuration file option "EnableGdcm" to "GdcmEnabled"
+* Fix hidden timeline when using Orthanc's "Osimis Web Viewer" button on series
+* Minor optimizations
+* Minor memory optimization
+
+Internal API changes
+* Add a wv-webviewer component to simplify the use of the web viewer as a library
+* config.js no longer need to be embeded at the root of projects using osimis-webviewer
+  as a JavaScript library
+* event renamed from "UserSelectedSeries" to "UserSelectedSeriesId", now takes an id
+  instead of a series as a parameter
+* event renamed from "UserUnSelectedSeries" to "UserUnSelectedSeriesId", now takes an id
+  instead of a series as a parameter
+* wv-serieslist and wv-studylist components now takes "study-id" instead of "study"
+  as a parameter
+* wv-splitpane no longer provide a viewport by default
+* wv-splitpane no longer wait for timeout before changing its layout
+* wv-splitpane interface has been completely rewritten (see source code)
+* wv-series-id viewport argument has been temporary renamed into vp-series-id
+  due to name collision
+* wv-scrollbar-overlay-item has been removed in favor of wv-loadingbar and
+  wv-timeline
+
+Version 0.4
+========================
+
+=> Minimum Orthanc version: 1.1.0 <=
+
+* Initial release based on Orthanc WebViewer version 2.2
+* Complete rewrite of the frontend code
+* Implement frontend image caching & preloading
+* Add standard tools
+* Implement progressive image loading
+* Bypass plugin compression when the dicom pixeldata are already compressed
+* Support of multiple viewport
+* Replace the backend memory-located cache by a backend disk-located cache
+* Upgrade to Boost 1.60.0 for static builds

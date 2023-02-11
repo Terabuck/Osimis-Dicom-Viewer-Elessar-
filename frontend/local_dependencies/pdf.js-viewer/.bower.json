@@ -1,0 +1,31 @@
+{
+"name": "pdf.js-viewer",
+"main": "pdf.js",
+"homepage": "http://github.com/legalthings/pdf.js-viewer",
+"authors": [
+"LegalThings <info@legalthings.net>",
+"Arnold Daniels <arnold@jasny.net>"
+],
+"description": "pdf.js build with viewer",
+"keywords": [
+"pdf"
+],
+"license": "Apache2",
+"ignore": [
+"**/.*",
+"node_modules",
+"bower_components",
+"spec",
+"**/*.spec.js"
+],
+"version": "0.3.3",
+"_release": "0.3.3",
+"_resolution": {
+"type": "version",
+"tag": "v0.3.3",
+"commit": "73285af8f0d731bf03e3ad12b367e689b2ccdf74"
+},
+"_source": "https://github.com/legalthings/pdf.js-viewer.git",
+"_target": "0.3.3",
+"_originalSource": "pdf.js-viewer"
+}

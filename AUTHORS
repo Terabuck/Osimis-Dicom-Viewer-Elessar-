@@ -1,0 +1,19 @@
+Web Viewer plugin for Orthanc
+=============================
+
+
+Authors
+-------
+
+* Sebastien Jodogne <s.jodogne@gmail.com>
+  Department of Medical Physics
+  University Hospital of Liege
+  Belgium
+
+  Original author of the Orthanc Web Viewer Plugin.
+
+* Thibault Piront <thibault.piront@osimis.io>
+  OSIMIS S.A.
+  Belgium
+
+  Overall design and lead developer.

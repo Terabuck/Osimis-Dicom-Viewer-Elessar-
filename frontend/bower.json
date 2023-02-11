@@ -1,0 +1,114 @@
+{
+  "name": "webviewer",
+  "version": "1.4.5",
+  "description": "Orthanc & component based viewer",
+  "main": [
+    "js/app.js",
+    "styles/app.css"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "authors": [
+    "Osimis"
+  ],
+  "ignore": [
+    "**/.*",
+    "!build"
+  ],
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/osimis/osimis-webviewer.git"
+  },
+  "devDependencies": {
+    "sinon": "1.17.7",
+    "bardjs": "0.1.10",
+    "angular-mocks": "1.8.0"
+  },
+  "dependencies": {
+    "jquery": "2.2.4",
+    "angular": "1.8.0",
+    "angular-animate": "1.8.0",
+    "angular-resource": "1.8.0",
+    "angular-sanitize": "1.8.0",
+    "angular-cookies": "1.8.0",
+    "bootstrap": "3.3.7",
+    "lodash": "4.17.10",
+    "font-awesome": "5.5.0",
+    "cornerstone": "./local_dependencies/cornerstone/",
+    "cornerstoneMath": "0.1.6",
+    "cornerstoneTools": "./local_dependencies/cornerstoneTools/",
+    "jpgjs": "notmasteryet/jpgjs",
+    "hamsterjs": "1.1.3",
+    "angular-strap": "2.3.12",
+    "jqueryui-touch-punch": "4bc0091452",
+    "ng-debounce": "0.1.7",
+    "hammerjs": "2.0.8",
+    "hammer-time": "1.1.0",
+    "png.js": "./local_dependencies/png.js",
+    "jpeg-lossless-decoder-js": "2.0.4",
+    "ua-parser-js": "0.7.18",
+    "bluebird": "3.5.1",
+    "asap": "kriskowal/asap#2.0.6",
+    "pdf.js-viewer": "./local_dependencies/pdf.js-viewer/",
+    "keyboardjs": "2.4.1",
+    "angular-translate": "2.18.0",
+    "angular-translate-loader-static-files": "2.18.0",
+    "angular-translate-storage-cookie": "2.18.0",
+    "uuid-js": "0.7.5"
+  },
+  "resolutions": {
+    "jquery": "2.2.4",
+    "sinon": "1.17.7",
+    "angular": "1.8.0",
+    "angular-cookies": "1.8.0"
+  },
+  "overrides": {
+    "keyboardjs": {
+      "main": [
+        "dist/keyboard.js"
+      ]
+    },
+    "cornerstone": {
+      "main": [
+        "index.js"
+      ]
+    },
+    "cornerstoneTools": {
+      "main": [
+        "index.js"
+      ]
+    },
+    "cornerstoneMath": {
+      "main": [
+        "dist/cornerstoneMath.js"
+      ]
+    },
+    "pdf.js-viewer": {
+      "main": [
+        "pdf.js"
+      ]
+    },
+    "asap": {
+      "main": []
+    },
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css"
+      ],
+      "dist": "dist/js/bootstrap.js"
+    },
+    "font-awesome": {
+      "main": [
+        "web-fonts-with-css/fontawesome-all.css"
+      ]
+    },
+    "png.js": {
+      "main": [
+        "zlib.js",
+        "png.js"
+      ]
+    }
+  }
+}

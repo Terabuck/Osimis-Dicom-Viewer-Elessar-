@@ -1,0 +1,136 @@
+This files list caracteristics of present dicoms.
+
+
+DICOM SR TESTS
+==============
+SR-normal_instance.dcm
+SR-sr_instance.dcm
+--------------
+study-id: 3ff62993-28b67f81-6dfb132b-9d53983a-3a61f711
+
+
+DICOM RGB US
+==============
+RGB-us-1.dcm
+	series: 0c94972d-96958bca-322136ac-eab228ed-d6a64772
+	instance: 97c349fa-ac660853-e6e56f0e-2f228b90-349a73a2
+RGB-us-2.dcm
+	series: 0c94972d-96958bca-322136ac-eab228ed-d6a64772
+	instance: cc8a37a5-fbe14059-88be8343-a335865e-b148991a
+RGB-us-1.dcm
+--------------
+study-id: 2578aef7-f90dd1b6-574c432a-4de716e7-e272b61b
+
+
+ORTHO
+==============
+ortho-COLONNE_LOMB_3_4.dcm
+	series: 88f2c431-551c6fd0-f6dc0339-f24e4488-eac0daa0
+	instance: 5eb2dd5f-3fca21a8-fa7565fd-63e112ae-344830a4
+ortho-COLONNE_LOMB_PROFILE.dcm
+	series: 490c7acf-a1be4de5-426b815d-cac51ded-bafbc0ee
+	instance: 61f3143e-96f34791-ad6bbb8d-62559e75-45943e1b
+ortho-BASSIN_DEBOUT.dcm
+	series: 288f9bb0-27298dbe-91a0cda2-b98e92ea-533ea405
+	instance: 01c55943-44d601b1-e0cfabae-527bedde-efffbc68
+ortho-KNEE.dcm
+	series: bed57ae2-169ad8c9-01ac6392-99a356b3-fb077b39
+	instance: db2bc0b0-a74c0712-3b28e206-c19e2bcc-a5519f00
+ortho-KNEE-COR_FSE_T1.dcm
+	series: 5910c9dd-4c2f8394-a9d63c4a-983e3837-7acded9b
+	instance: 2b22dad1-5b26015e-68493e3d-83a9854b-91a16d53
+ortho-KNEE-COR_FSE_T1_2.dcm
+	series: 5910c9dd-4c2f8394-a9d63c4a-983e3837-7acded9b
+	instance: f29eff5d-ab208b3c-fa1735d3-ebc4aa2f-284fa0cc
+ortho-KNEE-SAG_FSE_2.dcm
+	series: bed57ae2-169ad8c9-01ac6392-99a356b3-fb077b39
+	instance: 6a475b1c-90ff2158-1454a2b1-b3dcd743-75c3f02f
+ortho-KNEE-LOCRIGHT.dcm
+	series: 94847e5b-8ce88e05-ed3ecb66-1382484d-ffbb4698
+	instance: 0a7a66cd-df183cbd-23637ece-05028ac9-a8b1f108
+ortho-KNEE-LOCRIGHT2
+	series: 94847e5b-8ce88e05-ed3ecb66-1382484d-ffbb4698
+	instance: cce984be-b571de2e-6050d07e-089dafe7-4c08c2f3
+ortho-LOW_EXM-CHEVILLE_DROITE.dcm
+	series: 7982dce8-d6a3ce66-d6fac396-d2427a98-61d94367
+	instance: 04389b99-731fd35c-a8ba10a0-a1d9cb32-d7dbd903
+--------------
+PELVIS
+study-id:  f4951629-35ef9e4b-ade74118-14bc0200-577786a5
+
+
+ONCO
+=============
+onco-PET_WB_CORRECTED.dcm
+	series: 8fc3ca48-fda43dde-f6ec3bfd-3b7e1cdd-d51d1773
+	instance: fa1dfbd6-3812da93-043ddfd4-b721c003-052d26b3
+onco-PET_WB_UNCORRECTED.dcm
+	series: 845918a9-8f2a12e4-d4ccf697-f1d4c3ca-1fc32985
+	instance: c457f9fa-e2fdf2c3-d45358c9-34214af4-8f81c368
+onco-PET_WB_UNCORRECTED2.dcm
+	series: 845918a9-8f2a12e4-d4ccf697-f1d4c3ca-1fc32985
+	instance: 05609ac6-4b027ccf-5f22fba9-acaef97f-fae096c1
+onco-PATIENT_PROTOCOL.dcm
+	series: a51f7c64-b5de5a4b-f934eeb7-6f1d112b-2dbc98e2
+	instance: 0dc2fdfc-3343bbce-8b269209-c9d01459-1976f44e
+onco-PET_WB_CORRECTED2.dcm
+	series: 8fc3ca48-fda43dde-f6ec3bfd-3b7e1cdd-d51d1773
+	instance: 9728871f-b8e5a89d-95080863-9d120da9-f27b2502
+onco-AC_CT.dcm
+	series: 15f98005-1f25acb2-a0871e9f-f19c96a4-0d6f1f0f
+	instance: dbc2d204-53345730-c266c3a8-74962752-f42d8804
+onco-AC_CT2.dcm
+	series: 15f98005-1f25acb2-a0871e9f-f19c96a4-0d6f1f0f
+	instance: 4d7467a1-7bcbd3b6-cfacdc35-a00129e9-74a04d00
+-------------
+PET-CT
+study:  b6e8436b-c5835b7b-cecc9576-0483e165-ab5c710b
+
+
+CARDIO
+============
+corono-1.dcm
+	series: 5d0d012e-4e2766cb-dd38b9ab-605538eb-ea8ac2cf
+	instance: 83fe05d1-2aeb65d3-56da31bb-be734502-c514cf03
+corono-2.dcm
+	series: 5d0d012e-4e2766cb-dd38b9ab-605538eb-ea8ac2cf
+	instance: def8c78a-a6647ad0-2c63ef31-98ee476f-cf1918ca
+------------
+CORONOGRAPHIE
+MULTIFRAME
+study: 595df1a1-74fe920a-4b9e3509-826f17a3-762a2dc3
+
+
+NEURO
+============
+IRM-1.dcm - 39be12ef-cbbdf94f-3a6c9dae-7b81b31e-32968419
+IRM-2.dcm - 1b4c72ad-5aba2557-9fc396b3-323e190c-07d36585
+------------
+IRM
+SMALL
+study: 1b4c72ad-5aba2557-9fc396b3-323e190c-07d36585
+series: 3f78190a-d790c541-fe3ea054-5d65c902-73276db3
+
+DENTO
+============
+dento-DENTASCAN.dcm
+	series: 44a124f1-3cd6e496-30a43397-8eee6e0c-d0401dde
+	instance: 22480b2b-3a2fe306-d65eb9ae-ab150ce1-7aae0f8d
+dento-DENTASCAN2.dcm
+	series: 44a124f1-3cd6e496-30a43397-8eee6e0c-d0401dde
+	instance: 55ebd8b2-a4de45b5-41c039a4-3573d81e-107c4e79
+------------
+study: 494c8037-b237f263-d8f15075-c8cb2280-daf39bd1
+
+
+MAMMO
+============
+mammo-TOMO_DMLO.dcm
+	series: e8f82572-478a83e0-68c2eb0b-a8c128d9-d763fcb1
+	instance: b78dbf2b-2e731d41-d8831d11-06fb5be2-ded5efa5
+mammo-DCC.dcm
+	series: 95aee344-cdea91f8-0a1912b1-a24e8b4b-36d26a3b
+	instance: a4fab0f2-82286da6-9dc32e17-91eafc7e-17d29bc5
+------------
+TOMO
+study: 159f0c3d-99072051-6146da1c-02c9fe9a-5632fd15

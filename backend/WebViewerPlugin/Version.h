@@ -1,0 +1,46 @@
+//This file is overwritten with Git version strings when building an official release.
+//When building locally or not 'official' builds, version number or should be zeros
+#ifndef PRODUCT_VERSION_STRING
+#define PRODUCT_VERSION_STRING "0.0.0-0-000000"
+#endif
+
+#ifndef PRODUCT_VERSION_MAJOR
+#define PRODUCT_VERSION_MAJOR 0
+#endif
+
+#ifndef PRODUCT_VERSION_MINOR
+#define PRODUCT_VERSION_MINOR 0
+#endif
+
+#ifndef PRODUCT_VERSION_PATCH
+#define PRODUCT_VERSION_PATCH 0
+#endif
+
+#ifndef PRODUCT_VERSION_COMMIT_NUMBER
+#define PRODUCT_VERSION_COMMIT_NUMBER 0
+#endif
+
+#ifndef PRODUCT_VERSION_COMMIT_SHA1_STRING
+#define PRODUCT_VERSION_COMMIT_SHA1_STRING "000000"
+#endif
+
+#define xstringify(s) stringify(s)
+#define stringify(s) #s
+
+#define PRODUCT_VERSION_MAJOR_MINOR_STRING xstringify(PRODUCT_VERSION_MAJOR) "." xstringify(PRODUCT_VERSION_MINOR)
+#define PRODUCT_VERSION_FULL_STRING xstringify(PRODUCT_VERSION_MAJOR) "." xstringify(PRODUCT_VERSION_MINOR) "." xstringify(PRODUCT_VERSION_PATCH) "." xstringify(PRODUCT_VERSION_COMMIT_NUMBER) "-" PRODUCT_VERSION_COMMIT_SHA1_STRING
+
+#ifndef PRODUCT_VERSION_BUILD_YEAR_STRING
+#define PRODUCT_VERSION_BUILD_YEAR_STRING "0000"
+#endif
+
+#ifndef PRODUCT_VERSION_BUILD_MONTH_STRING
+#define PRODUCT_VERSION_BUILD_MONTH_STRING "00"
+#endif
+
+#ifndef PRODUCT_VERSION_BUILD_DAY_STRING
+#define PRODUCT_VERSION_BUILD_DAY_STRING "00"
+#endif
+
+#pragma message("version = " PRODUCT_VERSION_FULL_STRING)
+#pragma message("build date = " PRODUCT_VERSION_BUILD_YEAR_STRING "/" PRODUCT_VERSION_BUILD_MONTH_STRING "/" PRODUCT_VERSION_BUILD_DAY_STRING)

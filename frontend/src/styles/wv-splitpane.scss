@@ -1,0 +1,62 @@
+$gray: #808080;
+$blue: #1a68bd;
+$red: #be3827;
+$green: #488b3a;
+$yellow: #979828;
+$violet: #744087;
+.wvSplitpane {
+    height: 100%;
+    padding: 2px 0px 0px 2px;
+    position: relative;
+}
+.wvSplitpane__cell {
+    display: inline-block;
+    float: left;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.wvSplitpane__cellBorder,
+%wvSplitpane__cellBorder {
+    display: inline-block;
+    float: left;
+    height: calc(100% - 2px);
+    width: calc(100% - 2px);
+    border: 1px dashed transparent;
+    padding: 2px;
+    margin: 0;
+}
+.wvSplitpane__cellBorder--selected {
+    @extend .wvSplitpane__cellBorder;
+    border: 1px solid $blue;
+}
+.wvSplitpane__cellBorder--blue {
+    @extend .wvSplitpane__cellBorder;
+    border-color: $blue;
+}
+.wvSplitpane__cellBorder--red {
+    @extend .wvSplitpane__cellBorder;
+    border-color: $red;
+}
+.wvSplitpane__cellBorder--green {
+    @extend .wvSplitpane__cellBorder;
+    border-color: $green;
+}
+.wvSplitpane__cellBorder--yellow {
+    @extend .wvSplitpane__cellBorder;
+    border-color: $yellow;
+}
+.wvSplitpane__cellBorder--violet {
+    @extend .wvSplitpane__cellBorder;
+    border-color: $violet;
+}
+wv-pane-policy {
+    display: block;
+    width: 100%;
+    height: 100%;
+    > div[ng-transclude] {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+}

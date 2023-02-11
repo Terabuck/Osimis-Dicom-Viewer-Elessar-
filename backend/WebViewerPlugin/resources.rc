@@ -1,0 +1,29 @@
+#include <winver.h>
+#include "Version.h"
+
+VS_VERSION_INFO VERSIONINFO
+   FILEVERSION PRODUCT_VERSION_MAJOR,PRODUCT_VERSION_MINOR,PRODUCT_VERSION_PATCH,PRODUCT_VERSION_COMMIT_NUMBER
+   PRODUCTVERSION PRODUCT_VERSION_MAJOR,PRODUCT_VERSION_MINOR,PRODUCT_VERSION_PATCH,PRODUCT_VERSION_COMMIT_NUMBER
+   FILEOS VOS_NT_WINDOWS32
+   FILETYPE VFT_DLL
+   BEGIN
+      BLOCK "StringFileInfo"
+      BEGIN
+         BLOCK "040904E4"
+         BEGIN
+            VALUE "CompanyName", "OSIMIS SA, Belgium"
+            VALUE "FileDescription", "An Orthanc Plugin to visualize DICOM images in a web browser"
+            //VALUE "FileVersion", PRODUCT_VERSION_STRING
+            VALUE "ProductVersion", PRODUCT_VERSION_FULL_STRING
+            VALUE "InternalName", "OsimisWebViewer"
+            VALUE "LegalCopyright", "(c) " PRODUCT_VERSION_BUILD_YEAR_STRING ", OSIMIS SA, Belgium"
+            VALUE "OriginalFilename", "OsimisWebViewer.dll"
+            VALUE "ProductName", "OsimisWebViewer"
+         END
+      END
+
+      BLOCK "VarFileInfo"
+      BEGIN
+        VALUE "Translation", 0x409, 1252  // U.S. English
+      END
+   END

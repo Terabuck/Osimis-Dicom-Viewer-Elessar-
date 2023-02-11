@@ -1,0 +1,14 @@
+{
+  "name": "asap",
+  "homepage": "https://github.com/kriskowal/asap",
+  "version": "2.0.6",
+  "_release": "2.0.6",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.0.6",
+    "commit": "8b3a0ab294262ecf33fe1319cb265296312d119a"
+  },
+  "_source": "https://github.com/kriskowal/asap.git",
+  "_target": "2.0.6",
+  "_originalSource": "kriskowal/asap"
+}

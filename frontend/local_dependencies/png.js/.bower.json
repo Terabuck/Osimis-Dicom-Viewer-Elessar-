@@ -1,0 +1,13 @@
+{
+"name": "png.js",
+"homepage": "https://github.com/devongovett/png.js",
+"_release": "f23c75f278",
+"_resolution": {
+"type": "branch",
+"branch": "master",
+"commit": "f23c75f278c45917fbf457c3f63b61a889bea83e"
+},
+"_source": "https://github.com/devongovett/png.js.git",
+"_target": "*",
+"_originalSource": "devongovett/png.js"
+}

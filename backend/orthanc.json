@@ -1,0 +1,6 @@
+{
+	"RemoteAccessAllowed": true,
+	"AuthenticationEnabled": false,
+	"Plugins": ["/usr/share/orthanc/plugins"],
+	"StorageDirectory": "/var/lib/orthanc/db"
+}

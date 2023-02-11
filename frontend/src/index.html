@@ -1,0 +1,398 @@
+<!doctype html>
+<html ng-app="webviewer" class="wv-html">
+<head>
+    <link rel='icon' href='images/favicon.ico' type='image/ico'>
+    <script>
+        window.oldPrint = window.print;
+    </script>
+    <style>
+        /* This helps the ng-show/ng-hide animations start at the right place. */
+        /* Since Angular has this but needs to load, this gives us the class early. */
+        .ng-hide { display: none!important; }
+    </style>
+    <title ng-bind="title">Osimis Web Viewer</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <!-- <meta name="apple-mobile-web-app-capable" content="yes" /> -->
+    <!-- <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /> -->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    
+    <!-- https://gist.github.com/hal0gen/5852bd9db240c477f20c -->
+      <!-- CONFIGURATION -->
+
+    <!-- Allow web app to be run in full-screen mode - iOS. -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    
+    <!-- Allow web app to be run in full-screen mode - Android. -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Make the app title different than the page title - iOS. -->
+    <meta name="apple-mobile-web-app-title" content="Osimis Web Viewer">
+    
+    <!-- Make the app title different than the page title and configure icons - Android. -->
+    <link rel="manifest" href="images/manifest.json">
+
+    <!-- IE configuration for icons and colors is in browserconfig.xml -->
+
+    <!-- Configure the status bar - iOS. -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Set the viewport. -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimal-ui">
+
+    <!-- Disable automatic phone number detection. -->
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- ICONS -->
+
+    <!-- iOS icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="images/icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/icon-180x180.png">
+    
+    <!-- Android icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="images/icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/icon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon-16x16.png">
+
+    <!-- Windows icons -->
+    <meta name="msapplication-TileImage" content="/icon-144x144.png">
+    
+    <!-- Windows dock color -->
+    <meta name="msapplication-TileColor" content="#fff">
+    
+    <!-- Android dock color -->
+    <meta name="theme-color" content="#fff">
+
+    <!-- STARTUP IMAGES - iOS only -->
+
+    <!-- iPad retina portrait startup image -->
+    <link href="/splash-320x320.jpg"
+          media="(device-width: 768px) and (device-height: 1024px)
+                 and (-webkit-device-pixel-ratio: 2)
+                 and (orientation: portrait)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPad retina landscape startup image -->
+    <link href="/splash-320x320.jpg"
+          media="(device-width: 768px) and (device-height: 1024px)
+                 and (-webkit-device-pixel-ratio: 2)
+                 and (orientation: landscape)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPad non-retina portrait startup image -->
+    <link href="/splash-320x320.jpg"
+          media="(device-width: 768px) and (device-height: 1024px)
+                 and (-webkit-device-pixel-ratio: 1)
+                 and (orientation: portrait)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPad non-retina landscape startup image -->
+    <link href="/splash-320x320.jpg"
+          media="(device-width: 768px) and (device-height: 1024px)
+                 and (-webkit-device-pixel-ratio: 1)
+                 and (orientation: landscape)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPhone 6 Plus portrait startup image -->
+    <link href="/splash-320x320.jpg"
+          media="(device-width: 414px) and (device-height: 736px)
+                 and (-webkit-device-pixel-ratio: 3)
+                 and (orientation: portrait)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPhone 6 Plus landscape startup image -->
+    <link href="/splash-320x320.jpg"
+          media="(device-width: 414px) and (device-height: 736px)
+                 and (-webkit-device-pixel-ratio: 3)
+                 and (orientation: landscape)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPhone 6 startup image -->
+    <link href="/splash-320x320.jpg"
+          media="(device-width: 375px) and (device-height: 667px)
+                 and (-webkit-device-pixel-ratio: 2)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPhone 5 startup image -->
+    <link href="/splash-320x320.jpg"
+          media="(device-width: 320px) and (device-height: 568px)
+                 and (-webkit-device-pixel-ratio: 2)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPhone < 5 retina startup image -->
+    <link href="/splash-320x320.jpg"
+          media="(device-width: 320px) and (device-height: 480px)
+                 and (-webkit-device-pixel-ratio: 2)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPhone < 5 non-retina startup image -->
+    <link href="/splash-320x320.jpg"
+          media="(device-width: 320px) and (device-height: 480px)
+                 and (-webkit-device-pixel-ratio: 1)"
+          rel="apple-touch-startup-image">
+
+    <!-- build:css styles/lib.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css fonts/fonts.css -->
+    <!-- inject:fonts:css -->
+    <!-- endinject -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/app.css -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- endbuild -->
+</head>
+<body
+    ng-controller="MainController as vm"
+    class="wv-body"
+    ng-cloak
+>
+    <div class="wvLoadingScreen">
+        <div class="wvLoadingSpinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+          </div>
+    </div>
+    <wv-webviewer
+        wv-pickable-study-ids="vm.pickableStudyIds"
+        wv-pickable-study-id-labels="vm.pickableStudyIdLabels"
+        wv-selected-study-ids="vm.selectedStudyIds"
+        wv-series-id="vm.seriesId"
+
+        wv-toolbar-enabled="vm.enableToolbar"
+        wv-toolbar-layout-mode="vm.toolbarLayoutMode"
+        wv-toolbar-default-tool="vm.defaultSelectedTool"
+        wv-buttons-size="vm.toolbarButtonSize"
+
+        wv-serieslist-enabled="vm.enableLayoutLeft && vm.mode !== 'series'"
+        wv-studyinformation-enabled="vm.enableLayoutTop && vm.mode !== 'series'"
+        wv-lefthandles-enabled="vm.enableLayoutLeftHandles"
+
+        wv-notice-enabled="vm.enableNotice"
+        wv-notice-text="vm.noticeText"
+
+        wv-info-popup-enabled="true"
+
+        wv-windowing-presets="vm.windowingPresets"
+        wv-video-display-enabled="vm.videoDisplayEnabled"
+        wv-annotationstorage-enabled="vm.annotationStorageEnabled"
+        wv-series-item-selection-enabled="vm.seriesItemSelectionEnabled"
+        wv-selected-series-items="vm.selectedSeriesItems"
+        wv-study-download-enabled="vm.studyDownloadEnabled"
+        wv-key-image-capture-enabled="vm.keyImageCaptureEnabled"
+        wv-show-info-popup-button-enabled="vm.showInfoPopupButtonEnabled"
+        wv-download-as-jpeg-enabled="vm.downloadAsJpegEnabled"
+        wv-combined-tool-enabled="vm.combinedToolEnabled"
+
+        wv-study-islands-display-mode="vm.studyIslandsDisplayMode"
+
+        wv-show-no-report-icon-in-series-list="vm.showNoReportIconInSeriesList"
+        wv-display-disclaimer="vm.displayDisclaimer"
+        wv-reduce-timeline-height-on-single-frame-series="vm.reduceTimelineHeightOnSingleFrameSeries"
+    >
+    </wv-webviewer>
+
+    <!-- build:js js/lib.js -->
+    <!-- bower:js -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js js/app.js -->
+    <!-- inject:js -->
+    <!-- endinject -->
+
+    <!-- inject:templates:js -->
+    <!-- endinject -->
+    <!-- endbuild -->
+
+    <!-- Path served by orthanc backend -->
+    <script src="../config.js" type="text/javascript"></script>
+
+    <script>
+    angular
+    .module('webviewer')
+    // Remove debug info and improve performances
+    // Can be reactivated on the fly using "angular.reloadWithDebugInfo();" in the console
+    // see https://docs.angularjs.org/guide/production#disabling-debug-data
+    .config(['$compileProvider', function ($compileProvider) {
+        $compileProvider.debugInfoEnabled(false);
+    }])
+    // Define a basic controller
+    .controller('MainController', [
+        '$scope', '$location', '$translate', 'wvConfig', 'wvStudyManager', 'wvSeriesManager', 'wvViewerController',
+        function($scope, $location, $translate, wvConfig, wvStudyManager, wvSeriesManager, wvViewerController)
+    {
+        var vm = this;
+
+        // Deactivate study download on mobile
+        var uaParser = new UAParser();
+        vm.isMobile = (uaParser.getDevice().type === 'mobile');
+
+        // Retrieve URL's params and set study/series.
+        var orthancStudyId = $location.search().study;
+        var orthancSeriesId = $location.search().series;
+
+        vm.pickableStudyIds = [];
+        vm.pickableStudyIdLabels = {};
+        vm.selectedStudyIds = [];
+        vm.seriesId = undefined;
+        vm.wvViewerController = wvViewerController;
+
+        // Display orthanc study.
+        if (orthancStudyId) {
+            vm.mode = 'study';
+            vm.selectedStudyIds = [
+                orthancStudyId
+            ];
+
+            if (wvConfig.config.openAllPatientStudies) {
+                // Set all the patient studies as pickable.
+                wvStudyManager
+                    .getRelatedStudyIds(vm.selectedStudyIds)
+                    .then(function(studyIds) {
+                        vm.pickableStudyIds = studyIds;
+                    });
+            } else {
+                vm.pickableStudyIds = [orthancStudyId];
+            }
+        }
+        // Display & convert orthanc series id (from url parameter) into
+        // frontend series id.
+        else if (orthancSeriesId) {
+            wvSeriesManager
+                .listFromOrthancSeriesId(orthancSeriesId)
+                .then(function(seriesList) {
+                    // When singleframe, display the frontend series.
+                    if (seriesList.length === 1) {
+                        vm.mode = 'series';
+                        vm.seriesId = seriesList[0].id;
+                    }
+                    // When multiframe, consider series as a study.
+                    else if (!vm.selectedStudyIds.length) {
+                        // @todo @warning multiple series may be shown instead
+                        // of a single one... study id should also be split...
+                        wvStudyManager
+                            .getBySeriesId(orthancSeriesId)
+                            .then(function(study) {
+                                vm.mode = 'study';
+                                vm.selectedStudyIds = [
+                                    study.id
+                                ];
+
+                                // Set all the patient studies as pickable.
+                                if (wvConfig.config.openAllPatientStudies) {
+                                    // Set all the patient studies as pickable.
+                                    study
+                                        .getRelatedStudies()
+                                        .then(function(studyIds) {
+                                            vm.pickableStudyIds = studyIds;
+                                        });
+                                } else {
+                                    vm.pickableStudyIds = [study.id];
+                                }
+                            });
+                    }
+                    // Otherwise, throw exception.
+                    else {
+                        throw new Error('Invalid URL parameters');
+                    }
+                }, function(err) {
+                    console.error('err', err);
+                });
+        }
+        else
+        {
+            // try to get multiple series ids from the url param
+            if ($location.search().pickableStudyIds) {
+                vm.pickableStudyIds = $location.search().pickableStudyIds.split(",");
+                if ($location.search().selectedStudyIds) {
+                    vm.selectedStudyIds = $location.search().selectedStudyIds.split(",");
+                } else {
+                    vm.selectedStudyIds = vm.pickableStudyIds;
+                }
+            } else { // Show study list if study & series haven't been set via URL (dev mode).
+                vm.mode = 'dev';
+
+                // Set all orthanc studies as pickable.
+                wvStudyManager
+                    .getAllStudyIds()
+                    .then(function(studyIds) {
+                        vm.pickableStudyIds = studyIds;
+                    });
+            }
+        }
+
+
+        // Configure the user interface depending on the user angent/browser.
+        var userInterfacePolicy = new osimis.UserAgentBasedInterfacePolicy();
+        vm.enableLayoutTop = __webViewerConfig.showStudyInformationBreadcrumb && userInterfacePolicy.enableLayoutTop;
+        vm.enableLayoutTopLeft = userInterfacePolicy.enableLayoutTopLeft;
+        vm.enableLayoutTopRight = userInterfacePolicy.enableLayoutTopRight;
+        vm.enableToolbar = userInterfacePolicy.enableToolbar;
+        vm.enableLayoutLeft = userInterfacePolicy.enableLayoutLeft;
+        vm.enableLayoutLeftBottom = userInterfacePolicy.enableLayoutLeftBottom;
+        vm.enableLayoutLeftHandles = userInterfacePolicy.enableLayoutLeftHandles;
+        vm.enableNotice = userInterfacePolicy.enableNotice;
+        vm.noticeText = userInterfacePolicy.noticeText;
+
+        // Listen to changes triggered by the user interface policy.
+        userInterfacePolicy.onUpdate(function() {
+            $scope.$apply(function() {
+                vm.enableLayoutTop = __webViewerConfig.showStudyInformationBreadcrumb && userInterfacePolicy.enableLayoutTop;
+                vm.enableLayoutTopLeft = userInterfacePolicy.enableLayoutTopLeft;
+                vm.enableLayoutTopRight = userInterfacePolicy.enableLayoutTopRight;
+                vm.enableToolbar = userInterfacePolicy.enableToolbar;
+                vm.enableLayoutLeft = userInterfacePolicy.enableLayoutLeft;
+                vm.enableLayoutLeftBottom = userInterfacePolicy.enableLayoutLeftBottom;
+                vm.enableLayoutLeftHandles = userInterfacePolicy.enableLayoutLeftHandles;
+                vm.enableNotice = userInterfacePolicy.enableNotice;
+                vm.noticeText = userInterfacePolicy.noticeText;
+            });
+        });
+
+        // Configure settings based on server side options
+        vm.defaultLanguage = __webViewerConfig.defaultLanguage || "en";
+        vm.windowingPresets = __webViewerConfig.windowingPresets;
+        vm.studyDownloadEnabled = __webViewerConfig.studyDownloadEnabled;
+        vm.videoDisplayEnabled = __webViewerConfig.videoDisplayEnabled;
+        vm.annotationStorageEnabled = __webViewerConfig.annotationStorageEnabled;
+        vm.keyImageCaptureEnabled = __webViewerConfig.keyImageCaptureEnabled;
+        vm.showInfoPopupButtonEnabled = __webViewerConfig.showInfoPopupButtonEnabled;
+        vm.displayDisclaimer = __webViewerConfig.alwaysShowNotForDiagnosticUsageDisclaimer;
+        vm.downloadAsJpegEnabled = __webViewerConfig.downloadAsJpegEnabled;
+        vm.combinedToolEnabled = __webViewerConfig.combinedToolEnabled;
+        vm.showNoReportIconInSeriesList = __webViewerConfig.showNoReportIconInSeriesList;
+        vm.reduceTimelineHeightOnSingleFrameSeries = __webViewerConfig.reduceTimelineHeightOnSingleFrameSeries;
+        vm.toolbarLayoutMode = __webViewerConfig.toolbarLayoutMode || "flat";
+        vm.toolbarButtonSize = __webViewerConfig.toolbarButtonSize || "small";
+        vm.defaultSelectedTool = __webViewerConfig.defaultSelectedTool || "zoom";
+        vm.studyIslandsDisplayMode = vm.wvViewerController.getStudyIslandDisplayMode(__webViewerConfig.defaultStudyIslandsDisplayMode || "grid");
+
+        $translate.use(vm.defaultLanguage);
+    }]);
+    
+    // Prevent rendering the viewer if no parameters are provided
+    const urlContainParams = window.location.search.length === 0;
+    if (urlContainParams) window.location.href = "https://" + window.location.hostname;
+    
+    </script>
+    <script>
+        window.print = window.oldPrint;
+    </script>
+    <script src="js/pdf.js"></script>
+</body>
+</html>

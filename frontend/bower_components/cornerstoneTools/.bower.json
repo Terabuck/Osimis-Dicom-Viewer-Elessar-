@@ -1,0 +1,7 @@
+{
+  "name": "cornerstoneTools",
+  "main": "index.js",
+  "_source": "/home/ludwig/orthanc/osimis-webviewer-plugin/frontend/local_dependencies/cornerstoneTools",
+  "_target": "*",
+  "_originalSource": "./local_dependencies/cornerstoneTools/"
+}

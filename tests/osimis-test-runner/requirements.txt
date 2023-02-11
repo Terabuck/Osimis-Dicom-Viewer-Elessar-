@@ -1,0 +1,2 @@
+http://orthanc.osimis.io/pythonToolbox/OsimisToolbox-1.10.1.tar.gz
+termcolor==1.1.0

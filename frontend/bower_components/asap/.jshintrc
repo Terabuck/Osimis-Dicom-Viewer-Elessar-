@@ -1,0 +1,25 @@
+{
+    "browser": true,
+    "node": true,
+    "globalstrict": true,
+
+    "curly": true,
+    "eqeqeq": true,
+    "newcap": false,
+    "noarg": true,
+    "nonew": true,
+    "quotmark": "double",
+    "strict": true,
+    "trailing": true,
+    "undef": true,
+    "unused": true,
+    "loopfunc": true,
+
+    "globals": {
+        "setImmediate": false,
+        "performance": false,
+        "Map": true,
+        "Set": true,
+        "URL": true
+    }
+}

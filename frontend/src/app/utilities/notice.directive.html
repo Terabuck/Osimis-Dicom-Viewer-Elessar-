@@ -1,0 +1,42 @@
+<div class="wvNotice">
+    <!-- Text -->
+    <div class="wvNotice__text">
+        {{ "GENERAL_PARAGRAPHS.NOTICE" | translate }}
+    </div>
+
+    <!-- Close button -->
+    <div class="wvCustomTools">
+        <div>
+            <div style="display:inline" bs-tooltip bs-enabled="!vm.window.USER_IS_TOUCHING"
+                data-title="{{ 'CUSTOM_TOOLS.HOMEPAGE' | translate}}" placement="right"><a
+                    href="https://misimagenes.online" target="_blank" alt="Mis Imagenes Online Homepage"><img
+                        src="images/misimagenesonline.svg" alt="misimagenes.online" style=" max-width: 2.3rem;position: absolute;
+                        margin-left: 59%; top: 16px; transform: translateY(-50%); cursor: pointer; max-width:2.3rem;"></a>
+            </div>
+            <div style="display:inline" bs-tooltip bs-enabled="!vm.window.USER_IS_TOUCHING"
+                data-title="{{ 'CUSTOM_TOOLS.FULLSCREEN' | translate}}" placement="right">
+                <style>
+                    :-webkit-full-screen {}
+
+                    :-moz-full-screen {}
+
+                    :-ms-fullscreen {}
+
+                    :fullscreen {}
+                </style><img onclick="javascript:openFullscreen()" src="images/fullscreen.svg" alt="Fullscreen"
+                    style=" max-width: 2.3rem;position: absolute;
+                    margin-left: 75%; top: 16px; transform: translateY(-50%); cursor: pointer; max-width:2.3rem;">
+                <script>var elem = document.documentElement; function openFullscreen() { if (elem.requestFullscreen) { elem.requestFullscreen() } else if (elem.mozRequestFullScreen) { elem.mozRequestFullScreen() } else if (elem.webkitRequestFullscreen) { elem.webkitRequestFullscreen() } else if (elem.msRequestFullscreen) { elem.msRequestFullscreen() } }</script>
+                </img>
+            </div>
+        </div>
+    </div>
+    <img alt="Close" class="wvNotice__closeButton" ng-click="vm.close()" src="images/close.svg"></img>
+    <!-- Close icon    <div
+        class="wvNotice__closeButton"
+        ng-click="vm.close()"
+    >
+    <i class="fa fa-window-close"></i> 
+    </div>-->
+
+</div>

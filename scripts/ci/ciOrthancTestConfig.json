@@ -1,0 +1,66 @@
+{
+  /**
+   * General configuration of Orthanc
+   * used by CI to run the integration tests.
+   * This is the same config as the one inside the webviewer
+   * docker image, but with authentication and gzip compression
+   * deactivated.
+   **/
+
+  // The logical name of this instance of Orthanc. This one is
+  // displayed in Orthanc Explorer and at the URI "/system".
+  "Name" : "Orthanc inside Docker",
+
+  // Path to the directory that holds the heavyweight files
+  // (i.e. the raw DICOM instances)
+  "StorageDirectory" : "/var/lib/orthanc/db",
+
+  // Path to the directory that holds the SQLite index (if unset,
+  // the value of StorageDirectory is used). This index could be
+  // stored on a RAM-drive or a SSD device for performance reasons.
+  "IndexDirectory" : "/var/lib/orthanc/db",
+
+  // List of paths to the plugins that are to be loaded into this
+  // instance of Orthanc (e.g. "./libPluginTest.so" for Linux, or
+  // "./PluginTest.dll" for Windows). These paths can refer to
+  // folders, in which case they will be scanned non-recursively to
+  // find shared libraries.
+  "Plugins" : [
+    "/usr/share/orthanc/plugins", "/usr/local/share/orthanc/plugins"
+  ],
+
+  /**
+   * Configuration of the HTTP server
+   **/
+
+  // Enable the HTTP server. If this parameter is set to "false",
+  // Orthanc acts as a pure DICOM server. The REST API and Orthanc
+  // Explorer will not be available.
+  "HttpServerEnabled" : true,
+
+  // HTTP port for the REST services and for the GUI
+  "HttpPort" : 8042,
+
+  // Enable HTTP compression to improve network bandwidth utilization,
+  // at the expense of more computations on the server. Orthanc
+  // supports the "gzip" and "deflate" HTTP encodings.
+  "HttpCompressionEnabled" : false,
+
+  /**
+   * Security-related options for the HTTP server
+   **/
+
+  // Whether remote hosts can connect to the HTTP server
+  "RemoteAccessAllowed" : true,
+
+  // Whether or not the password protection is enabled
+  "AuthenticationEnabled" : false,
+
+  // The list of the registered users. Because Orthanc uses HTTP
+  // Basic Authentication, the passwords are stored as plain text.
+  "RegisteredUsers" : {
+    // "alice" : "alicePassword"
+  }
+
+}
+

@@ -1,0 +1,14 @@
+version: "2"
+services:
+
+    orthanc_populated:
+        # Must be built via demo/scripts/buildDocker.sh
+        image: osimis/orthanc-wvb-demo:latest-local
+        ports:
+            - "${PORT}:8042"
+
+networks:
+    default:
+        ipam:
+            config:
+                - subnet: ${SUBNET}

@@ -1,0 +1,21 @@
+version: "2"
+services:
+    orthanc:
+        image: ${TEST_IMAGE}:${TAG}
+        expose:
+            - "8042"
+    test_cpp:
+        image: ${TEST_IMAGE}:${TAG}
+        entrypoint: /root/OsimisViewerUnitTests
+        command: [ ]
+    test_js:
+        build:
+            context: ..
+            dockerfile: DockerfileTestRunner
+        image: ${TEST_RUNNER_IMAGE}:${TAG}
+        environment:
+            - ORTHANC_URL=http://orthanc:8042
+        expose:
+            - "9876"
+        links:
+            - orthanc # for depends_on https://github.com/docker/compose/blob/129092b7/docs/yml.md#links

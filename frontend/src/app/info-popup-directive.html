@@ -1,0 +1,26 @@
+<div class="wvInfoScreen" ng-if="vm.show">
+    <div class="wvInfoPopup">
+        <div class="wvInfoPopupLogo">
+            <a href="https://www.osimis.io" target="_blank"><img style="width: 36%; max-width: 120px;" src="images/mio-logo.png"/></a>
+            <a href="https://www.osimis.io" target="_blank"><img style="margin-left:16%; width: 48%; max-width: 180px;" src="images/logo-osimis.png"/></a>
+        </div>
+        <div class="wvInfoPopupText">
+            <h3>{{ "GENERAL_PARAGRAPHS.USAGE_TITLE" | translate }}</h3>
+            <p translate="GENERAL_PARAGRAPHS.USAGE_LONG">
+            </p>
+            <h3 ng-if="vm.showDocumentation">{{ "GENERAL_PARAGRAPHS.DOCUMENTATION_TITLE" | translate }}</h3>
+            <p ng-if="vm.showDocumentation">
+                <a ng-href="{{vm.documentationUrl}}" target="_blank">{{ "GENERAL_PARAGRAPHS.DOCUMENTATION_LINK" | translate }}</a>
+            </p>
+        </div>
+        <div class="wvInfoPopupForm">
+            <label ng-if="vm.showCheckbox" style="margin-bottom: 0px;">{{ "GENERAL_PARAGRAPHS.SHOW_INFO_POPUP_AT_STARTUP" | translate }}
+                <input type="checkbox" style="margin-left: 20px" id="showInfoPopupAtStartupUserPref" name="showInfoPopupAtStartupUserPref" ng-model="vm.showInfoPopupAtStartupUserPref">
+            </label>
+            <br><br>
+            <div style="text-align: center;">
+                <input type="submit" class="wvInfoPopupCloseButton" value="{{ 'ACTION_TERMS.CLOSE' | translate | wvCapitalize }}" ng-click="vm.close()">
+            </div>
+        </div>
+    </div>
+</div>

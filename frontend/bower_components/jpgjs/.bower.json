@@ -1,0 +1,22 @@
+{
+  "name": "jpgjs",
+  "keywords": [
+    "jpgjs",
+    "JPEG",
+    "JPG"
+  ],
+  "main": [
+    "jpg.js"
+  ],
+  "ignore": [],
+  "homepage": "https://github.com/notmasteryet/jpgjs",
+  "_release": "f1d30922fd",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "f1d30922fda93417669246f5a25cf2393dd9c108"
+  },
+  "_source": "https://github.com/notmasteryet/jpgjs.git",
+  "_target": "*",
+  "_originalSource": "notmasteryet/jpgjs"
+}
