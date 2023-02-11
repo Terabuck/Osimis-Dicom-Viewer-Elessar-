@@ -1,3 +1,42 @@
+# Osimis Dicom Viewer - Elessar (Green) Skin
+
+Osimis Dicom Viewer, forked and tuned (green and grey). 
+
+- Vertical browsing in mobile media, and fullscreen optimization. Some minors adjustments were made to the scss just to avoid some fields overlapping of the PDF menu bar when used in small screens.
+- DICOM tools are still available in small screens (first select desktop mode, and then activate fullscreen mode).
+- Patient age and additional study diagnostic information is displayed.
+- QR & Social Share snippets must be properly configured in /frontend/src/app/webviewer.directive.html after YOURLS installation
+- After "build" folder is created, it must be renamed to frontend-build, then PDFJS and Worker must be copied to /frontend/frontend-build/js folder. Then the folder must be compressed to 1.4.1.zip and moved to /backend/ThirdPartyDownloads. Then build the plugin as explained in the original documentation.   
+- Please note IOS/iPhone is not supported.
+
+"The Elessar I leave with thee, for there are grievous hurts to Middle-earth which thou maybe shalt heal."
+
+This "tuning" is entirely based on the original Osimis Dicom Viewer
+
+Mainly motivated to avoid the visual stress of high contrast of black and light blue, the interface matches the colors of the Orthanc Explorer Elessar mode as well as the Orthanc Explorer 2 Dark Mode, respectively available at https://github.com/Terabuck/Elessar and https://github.com/Terabuck/orthanc-explorer-2/tree/master-dark-i18n
+
+# Localization
+
+Following Pascal Precht Angular Translate scheme, the updated locales for the Osimis WebViewer are includded.
+
+## Available languages:
+
+French, Spanish, Portuguese, Chinese, Dutch, German, Japanese, Italian and English (default)
+
+
+## Examples (Anonymized):
+
+Chest xRay (COVID-19): https://misimagenes.online/ym166
+
+Face CT: https://misimagenes.online/g9b6v
+
+Lumbar Spine MRI: https://misimagenes.online/j8hqh
+
+Digital Mammography and Doppler US: https://misimagenes.online/6d4ac
+
+
+The following is the Readme.md text from the original Osimis Web Viewer, now deprecated, that can be found at https://bitbucket.org/osimis/osimis-webviewer-plugin/src/master/
+
 # Osimis Web Viewer
 
 The [Osimis'](htpp://www.osimis.io/) Web Viewer provides medical image 
