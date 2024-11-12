@@ -187,6 +187,32 @@
         };
         return directive;
 
+        function indexImageLayout({ x, y }) {
+            
+            const coordinates = {
+                '0,0': 'R-CC',
+                '0,1': 'L-CC',
+                '1,0': 'R-MLO',
+                '1,1': 'L-MLO',
+            };
+            const key = `${y},${x}`; // Corregido: Añadidas las comillas
+            const pane = coordinates[key];
+          
+            if (pane !== undefined) {
+                const layoutIndexMap = {
+                    'R-CC': 0,
+                    'L-CC': 1,
+                    'R-MLO': 2,
+                    'L-MLO': 3,
+                };
+        
+                return layoutIndexMap[pane] !== undefined ? layoutIndexMap[pane] : 0;
+            }
+            return 0;
+        };
+        
+
+
         function link(scope, element, attrs, ctrls, transcludeFn) {
             var vm = scope.vm;
 
@@ -625,6 +651,7 @@
             scope.$watch('vm.tools.layout', function(layout) {
                 // Update panes' layout.
                 vm.wvViewerController.setLayout(layout.x, layout.y);
+                fillAllPanesWithFirstSeries(vm, wvStudyManager, wvPaneManager, wvViewerController)
             }, true);
             vm.onItemDroppedToPane = function(x, y, config) {
                 // Set dropped pane as selected
@@ -772,6 +799,7 @@
             // @todo Only watch seriesIds & remove deep watch (opti).
             scope.$watch('vm.panes', function(newViewports, oldViewports) {
                 for (var i=0; i<newViewports.length || i<oldViewports.length; ++i) {
+                     fillAllPanesWithFirstSeries(vm, wvStudyManager, wvPaneManager, wvViewerController)
                     // Ignore changes unrelated to seriesId
                     if (oldViewports[i] && newViewports[i] && oldViewports[i].seriesId === newViewports[i].seriesId
                     || !oldViewports[i] && !newViewports[i]
